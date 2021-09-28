@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface OrderRepository {
     // null if not found, when updated
-    Order save(User user);
+    Order save(Order order);
 
     // false if not found
     boolean delete(int id);

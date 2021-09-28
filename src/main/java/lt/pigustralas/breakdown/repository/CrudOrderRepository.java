@@ -12,13 +12,13 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Transactional(readOnly = true)
-public interface CrudOrderRepository extends JpaRepository<User, Integer> {
+public interface CrudOrderRepository extends JpaRepository<Order, Integer> {
 
-    @Modifying
     @Transactional
-    @Query("DELETE FROM Order m WHERE m.id=:id AND m.user.id=:userId")
-    int delete(@Param("id") int id, @Param("userId") int userId);
+    @Modifying
+    @Query("DELETE FROM Order o WHERE o.id=:id")
+    int delete(@Param("id") int id);
 
-    @Query("SELECT m FROM Order m WHERE m.user.id=:userId")
-    List<Order> getAll(@Param("userId") int userId);
+    @Query("SELECT o FROM Order o WHERE o.user.id=:orderId")
+    List<Order> getAll(@Param("orderId") int orderId);
 }
