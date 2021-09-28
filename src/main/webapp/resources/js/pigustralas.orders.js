@@ -12,11 +12,6 @@ const ctx = {
     }
 };
 
-function clearFilter() {
-    $("#filter")[0].reset();
-    $.get(orderAjaxUrl, updateTableByData);
-}
-
 // http://api.jquery.com/jQuery.ajax/#using-converters
 $.ajaxSetup({
     converters: {
@@ -47,13 +42,25 @@ $(function () {
                 "data": "price"
             },
             {
-                "data": "registered"
-            },
-            {
-                "data": "active"
-            },
-            {
                 "data": "phoneNumber"
+            },
+            {
+                "data": "registered",
+                "render": function (date, type, row) {
+                    if (type === "display") {
+                        return date.substring(0, 10);
+                    }
+                    return date;
+                }
+            },
+            {
+                "data": "active",
+                "render": function (data, type, row) {
+                    if (type === "display") {
+                        return "<input type='checkbox' " + (data ? "checked" : "") + " onclick='enable($(this)," + row.id + ");'/>";
+                    }
+                    return data;
+                }
             },
             {
                 "render": renderEditBtn,
@@ -71,59 +78,6 @@ $(function () {
                 0,
                 "desc"
             ]
-        ],
-        "createdRow": function (row, data, dataIndex) {
-            $(row).attr("data-mealExcess", data.excess);
-        }
-    });
-
-
-//  http://xdsoft.net/jqplugins/datetimepicker/
-    var startDate = $('#startDate');
-    var endDate = $('#endDate');
-    startDate.datetimepicker({
-        timepicker: false,
-        format: 'Y-m-d',
-        formatDate: 'Y-m-d',
-        onShow: function (ct) {
-            this.setOptions({
-                maxDate: endDate.val() ? endDate.val() : false
-            })
-        }
-    });
-    endDate.datetimepicker({
-        timepicker: false,
-        format: 'Y-m-d',
-        formatDate: 'Y-m-d',
-        onShow: function (ct) {
-            this.setOptions({
-                minDate: startDate.val() ? startDate.val() : false
-            })
-        }
-    });
-
-    var startTime = $('#startTime');
-    var endTime = $('#endTime');
-    startTime.datetimepicker({
-        datepicker: false,
-        format: 'H:i',
-        onShow: function (ct) {
-            this.setOptions({
-                maxTime: endTime.val() ? endTime.val() : false
-            })
-        }
-    });
-    endTime.datetimepicker({
-        datepicker: false,
-        format: 'H:i',
-        onShow: function (ct) {
-            this.setOptions({
-                minTime: startTime.val() ? startTime.val() : false
-            })
-        }
-    });
-
-    $('#dateTime').datetimepicker({
-        format: 'Y-m-d H:i'
+        ]
     });
 });

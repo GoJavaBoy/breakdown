@@ -7,7 +7,7 @@ CREATE SEQUENCE global_seq START WITH 100000;
 
 CREATE TABLE orders
 (
-    order_id            INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
+    id            INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
     point_a             VARCHAR                           NOT NULL,
     point_b             VARCHAR                           NOT NULL,
     price               INTEGER                           NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE users
     password         VARCHAR                           NOT NULL,
     registered       TIMESTAMP           DEFAULT now() NOT NULL,
     enabled          BOOL                DEFAULT TRUE  NOT NULL,
-    FOREIGN KEY (order_id) REFERENCES orders (order_id)
+    FOREIGN KEY (order_id) REFERENCES orders (id)
 );
 CREATE UNIQUE INDEX users_unique_email_idx ON users (email);
 

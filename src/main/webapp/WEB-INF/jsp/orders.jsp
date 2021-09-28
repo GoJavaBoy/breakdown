@@ -20,9 +20,12 @@
         <table class="table table-striped" id="datatable">
             <thead>
             <tr>
-                <th>Date time</th>
-                <th>Description</th>
-                <th>Calories</th>
+                <th>Point A</th>
+                <th>Point B</th>
+                <th>Price</th>
+                <th>Phone number</th>
+                <th>Registered</th>
+                <th>Active</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -43,20 +46,26 @@
                     <input type="hidden" id="id" name="id">
 
                     <div class="form-group">
-                        <label for="dateTime" class="col-form-label">Date time</label>
-                        <input class="form-control" id="dateTime" name="dateTime" autocomplete="off"
-                               placeholder="Datetime">
+                        <label for="pointA" class="col-form-label">point A</label>
+                        <input type="text" class="form-control" id="pointA" name="pointA"
+                               placeholder="pointA">
                     </div>
 
                     <div class="form-group">
-                        <label for="description" class="col-form-label">Description</label>
-                        <input type="text" class="form-control" id="description" name="description"
-                               placeholder="Description">
+                        <label for="pointB" class="col-form-label">point B</label>
+                        <input type="text" class="form-control" id="pointB" name="pointB"
+                               placeholder="pointB">
                     </div>
 
                     <div class="form-group">
-                        <label for="calories" class="col-form-label">Calories</label>
-                        <input type="number" class="form-control" id="calories" name="calories" placeholder="1000">
+                        <label for="price" class="col-form-label">Price</label>
+                        <input type="number" class="form-control" id="price" name="price" placeholder="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber" class="col-form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
+                               placeholder="phoneNumber">
                     </div>
                 </form>
             </div>
