@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/profile/meals", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/profile/orders", produces = MediaType.APPLICATION_JSON_VALUE)
 public class OrderUIController extends AbstractOrderController {
 
     @Override

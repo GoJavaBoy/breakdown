@@ -28,7 +28,7 @@ public class Order extends AbstractBaseEntity{
 
     @Column(name = "phone_number", nullable = false)
     @NotBlank
-    private int phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "registered", nullable = false, columnDefinition = "timestamp default now()")
     @NotNull
@@ -44,7 +44,7 @@ public class Order extends AbstractBaseEntity{
     public Order() {
     }
 
-    public Order(Integer id, String pointA, String pointB, int phoneNumber, int price) {
+    public Order(Integer id, String pointA, String pointB, String phoneNumber, int price) {
         super(id);
         this.pointA = pointA;
         this.pointB = pointB;
@@ -76,11 +76,11 @@ public class Order extends AbstractBaseEntity{
         this.price = price;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

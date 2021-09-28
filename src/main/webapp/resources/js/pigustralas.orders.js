@@ -1,12 +1,12 @@
-const mealAjaxUrl = "profile/meals/";
+const orderAjaxUrl = "profile/orders/";
 
 // https://stackoverflow.com/a/5064235/548473
 const ctx = {
-    ajaxUrl: mealAjaxUrl,
+    ajaxUrl: orderAjaxUrl,
     updateTable: function () {
         $.ajax({
             type: "GET",
-            url: mealAjaxUrl + "filter",
+            url: orderAjaxUrl,
             data: $("#filter").serialize()
         }).done(updateTableByData);
     }
@@ -14,7 +14,7 @@ const ctx = {
 
 function clearFilter() {
     $("#filter")[0].reset();
-    $.get(mealAjaxUrl, updateTableByData);
+    $.get(orderAjaxUrl, updateTableByData);
 }
 
 // http://api.jquery.com/jQuery.ajax/#using-converters
@@ -38,13 +38,22 @@ $(function () {
     makeEditable({
         "columns": [
             {
-                "data": "dateTime"
+                "data": "pointA"
             },
             {
-                "data": "description"
+                "data": "pointB"
             },
             {
-                "data": "calories"
+                "data": "price"
+            },
+            {
+                "data": "registered"
+            },
+            {
+                "data": "active"
+            },
+            {
+                "data": "phoneNumber"
             },
             {
                 "render": renderEditBtn,
@@ -68,7 +77,6 @@ $(function () {
         }
     });
 
-    $.datetimepicker.setLocale(localeCode);
 
 //  http://xdsoft.net/jqplugins/datetimepicker/
     var startDate = $('#startDate');

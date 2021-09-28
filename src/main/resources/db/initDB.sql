@@ -7,13 +7,13 @@ CREATE SEQUENCE global_seq START WITH 100000;
 
 CREATE TABLE orders
 (
-    order_id               INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
+    order_id            INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
     point_a             VARCHAR                           NOT NULL,
     point_b             VARCHAR                           NOT NULL,
     price               INTEGER                           NOT NULL,
     registered          TIMESTAMP           DEFAULT now() NOT NULL,
     active              BOOL                DEFAULT TRUE  NOT NULL,
-    phone_number        INTEGER                           NOT NULL
+    phone_number        VARCHAR                           NOT NULL
 );
 
 CREATE TABLE users
