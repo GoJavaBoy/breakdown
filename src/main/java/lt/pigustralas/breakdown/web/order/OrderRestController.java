@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = OrderRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class OrderRestController extends AbstractOrderController {
-    static final String REST_URL = "/rest/profile/meals";
+    static final String REST_URL = "/rest/profile/orders";
 
     @Override
     @GetMapping("/{id}")

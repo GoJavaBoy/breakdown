@@ -3,6 +3,8 @@ package lt.pigustralas.breakdown.service;
 import lt.pigustralas.breakdown.AuthorizedUser;
 import lt.pigustralas.breakdown.model.User;
 import lt.pigustralas.breakdown.repository.UserRepository;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,6 +19,7 @@ import static lt.pigustralas.breakdown.util.validation.ValidationUtil.checkNotFo
 import static lt.pigustralas.breakdown.util.validation.ValidationUtil.checkNotFoundWithId;
 
 @Service("userService")
+@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class UserService implements UserDetailsService {
     private final UserRepository repository;
     private final PasswordEncoder passwordEncoder;
