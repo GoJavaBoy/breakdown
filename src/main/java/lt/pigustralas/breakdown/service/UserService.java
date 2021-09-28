@@ -1,15 +1,8 @@
 package lt.pigustralas.breakdown.service;
 
 import lt.pigustralas.breakdown.AuthorizedUser;
-import lt.pigustralas.breakdown.model.AbstractBaseEntity;
 import lt.pigustralas.breakdown.model.User;
 import lt.pigustralas.breakdown.repository.UserRepository;
-import lt.pigustralas.breakdown.util.UserUtil;
-import lt.pigustralas.breakdown.util.exception.UpdateRestrictionException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.core.env.Environment;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
