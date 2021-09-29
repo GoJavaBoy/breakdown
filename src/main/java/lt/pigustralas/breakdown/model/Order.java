@@ -23,7 +23,6 @@ public class Order extends AbstractBaseEntity{
     private String pointB;
 
     @Column(name = "price")
-    @NotBlank
     private int price;
 
     @Column(name = "phone_number", nullable = false)

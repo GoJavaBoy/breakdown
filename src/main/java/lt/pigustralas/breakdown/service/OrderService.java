@@ -1,8 +1,10 @@
 package lt.pigustralas.breakdown.service;
 
 import lt.pigustralas.breakdown.model.Order;
+import lt.pigustralas.breakdown.model.User;
 import lt.pigustralas.breakdown.repository.OrderRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import java.util.List;
@@ -37,5 +39,12 @@ public class OrderService {
     public Order create(Order order) {
         Assert.notNull(order, "meal must not be null");
         return repository.save(order);
+    }
+
+    @Transactional
+    public void enable(int id, boolean enabled) {
+        Order order = get(id);
+        order.setActive(enabled);
+        repository.save(order);  // !! need only for JDBC implementation
     }
 }

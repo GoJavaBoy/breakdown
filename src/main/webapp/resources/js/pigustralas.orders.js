@@ -19,8 +19,8 @@ $.ajaxSetup({
             var json = JSON.parse(stringData);
             if (typeof json === 'object') {
                 $(json).each(function () {
-                    if (this.hasOwnProperty('dateTime')) {
-                        this.dateTime = this.dateTime.substr(0, 16).replace('T', ' ');
+                    if (this.hasOwnProperty('registered')) {
+                        this.registered = this.registered.substr(0, 19).replace('T', ' ');
                     }
                 });
             }
@@ -48,7 +48,7 @@ $(function () {
                 "data": "registered",
                 "render": function (date, type, row) {
                     if (type === "display") {
-                        return date.substring(0, 10);
+                        return date.substring(0, 19);
                     }
                     return date;
                 }
@@ -81,3 +81,18 @@ $(function () {
         ]
     });
 });
+
+function enable(chkbox, id) {
+    var enabled = chkbox.is(":checked");
+//  https://stackoverflow.com/a/22213543/548473
+    $.ajax({
+        url: orderAjaxUrl + id,
+        type: "POST",
+        data: "enabled=" + enabled
+    }).done(function () {
+        chkbox.closest("tr").attr("data-userEnabled", enabled);
+        successNoty(enabled ? "common.enabled" : "common.disabled");
+    }).fail(function () {
+        $(chkbox).prop("checked", !enabled);
+    });
+}
