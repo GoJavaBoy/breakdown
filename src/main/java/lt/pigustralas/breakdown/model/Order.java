@@ -2,10 +2,7 @@ package lt.pigustralas.breakdown.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -40,6 +37,10 @@ public class Order extends AbstractBaseEntity{
     @OneToOne(mappedBy = "order")
     private User user;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "order_status", nullable = false)
+    private OrderStatus status;
+
     public Order() {
     }
 
@@ -73,6 +74,14 @@ public class Order extends AbstractBaseEntity{
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
     }
 
     public String getPhoneNumber() {

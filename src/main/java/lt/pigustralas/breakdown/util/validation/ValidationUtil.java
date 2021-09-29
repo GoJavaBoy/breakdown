@@ -1,6 +1,9 @@
 package lt.pigustralas.breakdown.util.validation;
 
 import lt.pigustralas.breakdown.HasId;
+import lt.pigustralas.breakdown.model.Order;
+import lt.pigustralas.breakdown.model.OrderStatus;
+import lt.pigustralas.breakdown.model.User;
 import lt.pigustralas.breakdown.util.exception.ErrorType;
 import lt.pigustralas.breakdown.util.exception.IllegalRequestDataException;
 import lt.pigustralas.breakdown.util.exception.NotFoundException;
@@ -88,5 +91,17 @@ public class ValidationUtil {
             log.warn("{} at request  {}: {}", errorType, req.getRequestURL(), rootCause.toString());
         }
         return rootCause;
+    }
+
+    public static void assuredOrderStatusOnAccept(User user, Order order){
+        if (user.getOrder() != null || !order.getStatus().equals(OrderStatus.ACTIVE)){
+            throw new IllegalRequestDataException("Can't accept more than one order");
+        }
+    }
+
+    public static void assuredOrderStatusOnComplete(User user, Order order){
+        if (user.getOrder() == null || !order.getStatus().equals(OrderStatus.IN_PROGRESS)){
+            throw new IllegalRequestDataException("You don't have orders to complete");
+        }
     }
 }

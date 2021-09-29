@@ -1,4 +1,4 @@
-const orderAjaxUrl = "admin/orders/";
+const orderAjaxUrl = "profile/orders/";
 
 // https://stackoverflow.com/a/5064235/548473
 const ctx = {
@@ -57,21 +57,7 @@ $(function () {
                 "data": "status"
             },
             {
-                "data": "active",
-                "render": function (data, type, row) {
-                    if (type === "display") {
-                        return "<input type='checkbox' " + (data ? "checked" : "") + " onclick='enable($(this)," + row.id + ");'/>";
-                    }
-                    return data;
-                },
-            },
-            {
-                "render": renderEditBtn,
-                "defaultContent": "",
-                "orderable": false
-            },
-            {
-                "render": renderDeleteBtn,
+                "render": renderAcceptBtn,
                 "defaultContent": "",
                 "orderable": false
             }
@@ -85,17 +71,32 @@ $(function () {
     });
 });
 
-function enable(chkbox, id) {
-    var enabled = chkbox.is(":checked");
-//  https://stackoverflow.com/a/22213543/548473
-    $.ajax({
-        url: orderAjaxUrl + id,
-        type: "POST",
-        data: "enabled=" + enabled
-    }).done(function () {
-        chkbox.closest("tr").attr("data-userEnabled", enabled);
-        successNoty(enabled ? "common.enabled" : "common.disabled");
-    }).fail(function () {
-        $(chkbox).prop("checked", !enabled);
-    });
+function renderAcceptBtn(data, type, row) {
+    if (type === "display") {
+        return "<a onclick='acceptOrder(" + row.id + ");'><span class='fa fa-check'></span></a>";
+    }
+}
+
+function acceptOrder(id) {
+    if (confirm("Confirm")) {
+        $.ajax({
+            url: ctx.ajaxUrl + "accept/" + id,
+            type: "POST"
+        }).done(function () {
+            ctx.updateTable();
+            successNoty("ORDER ACCEPTED");
+        });
+    }
+}
+
+function completeOrder(id) {
+    if (confirm("Confirm")) {
+        $.ajax({
+            url: ctx.ajaxUrl + "complete/" + id,
+            type: "POST"
+        }).done(function () {
+            ctx.updateTable();
+            successNoty("ORDER COMPLETED");
+        });
+    }
 }

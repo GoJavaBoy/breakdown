@@ -61,6 +61,9 @@ $(function () {
                 }
             },
             {
+                "data": "status"
+            },
+            {
                 "orderable": false,
                 "defaultContent": "",
                 "render": renderEditBtn

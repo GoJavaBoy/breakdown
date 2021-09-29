@@ -1,20 +1,26 @@
 package lt.pigustralas.breakdown.web.order;
 
 import lt.pigustralas.breakdown.model.Order;
+import lt.pigustralas.breakdown.model.OrderStatus;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/profile/orders", produces = MediaType.APPLICATION_JSON_VALUE)
-public class OrderUIController extends AbstractOrderController {
+public class ProfileOrderUIController extends AbstractOrderController {
 
     @Override
     @GetMapping
     public List<Order> getAll() {
-        return super.getAll();
+        List<Order> activeOrders = super.getAll()
+                .stream()
+                .filter(order -> order.getStatus().equals(OrderStatus.ACTIVE) || order.getStatus().equals(OrderStatus.PENDING))
+                .collect(Collectors.toList());
+        return activeOrders;
     }
 
     @Override
@@ -24,26 +30,16 @@ public class OrderUIController extends AbstractOrderController {
     }
 
     @Override
-    @DeleteMapping("/{id}")
+    @PostMapping("/accept/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable int id) {
-        super.delete(id);
-    }
-
-    @PostMapping
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void createOrUpdate(Order order) {
-        if (order.isNew()) {
-            super.create(order);
-        } else {
-            super.update(order, order.getId());
-        }
+    public void accept(@PathVariable int id) {
+        super.accept(id);
     }
 
     @Override
-    @PostMapping("/{id}")
+    @PostMapping("/complete/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void enable(@PathVariable int id, @RequestParam boolean enabled) {
-        super.enable(id, enabled);
+    public void complete(@PathVariable int id) {
+        super.complete(id);
     }
 }

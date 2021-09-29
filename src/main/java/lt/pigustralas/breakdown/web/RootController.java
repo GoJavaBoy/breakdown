@@ -28,4 +28,9 @@ public class RootController {
     public String getOrders() {
         return "orders";
     }
+
+    @GetMapping("/activeorders")
+    public String getActiveOrders() {
+        return "activeOrders";
+    }
 }

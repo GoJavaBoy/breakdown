@@ -13,7 +13,8 @@ CREATE TABLE orders
     price               INTEGER                           NOT NULL,
     registered          TIMESTAMP           DEFAULT now() NOT NULL,
     active              BOOL                DEFAULT TRUE  NOT NULL,
-    phone_number        VARCHAR                           NOT NULL
+    phone_number        VARCHAR                           NOT NULL,
+    order_status        VARCHAR                           NOT NULL
 );
 
 CREATE TABLE users
@@ -25,6 +26,7 @@ CREATE TABLE users
     password         VARCHAR                           NOT NULL,
     registered       TIMESTAMP           DEFAULT now() NOT NULL,
     enabled          BOOL                DEFAULT TRUE  NOT NULL,
+    user_status      VARCHAR                           NOT NULL,
     FOREIGN KEY (order_id) REFERENCES orders (id)
 );
 CREATE UNIQUE INDEX users_unique_email_idx ON users (email);

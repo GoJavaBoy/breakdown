@@ -2,6 +2,7 @@ package lt.pigustralas.breakdown.web.order;
 
 import lt.pigustralas.breakdown.model.Order;
 import lt.pigustralas.breakdown.service.OrderService;
+import lt.pigustralas.breakdown.web.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -38,5 +39,15 @@ public abstract class AbstractOrderController {
 
     public void enable(int id, boolean enabled) {
         service.enable(id, enabled);
+    }
+
+    public void accept(int orderId) {
+        int userId = SecurityUtil.authUserId();
+        service.accept(orderId, userId);
+    }
+
+    public void complete(int orderId) {
+        int userId = SecurityUtil.authUserId();
+        service.complete(orderId, userId);
     }
 }

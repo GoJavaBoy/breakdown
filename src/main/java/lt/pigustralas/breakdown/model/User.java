@@ -63,6 +63,10 @@ public class User extends AbstractNamedEntity implements HasIdAndEmail {
     @JoinColumn(name = "order_id")
     private Order order;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_status", nullable = false)
+    private UserStatus status;
+
     public User() {
     }
 
@@ -92,6 +96,14 @@ public class User extends AbstractNamedEntity implements HasIdAndEmail {
         this.email = email;
     }
 
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -110,6 +122,14 @@ public class User extends AbstractNamedEntity implements HasIdAndEmail {
 
     public boolean isEnabled() {
         return enabled;
+    }
+
+    public UserStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(UserStatus status) {
+        this.status = status;
     }
 
     public Set<Role> getRoles() {

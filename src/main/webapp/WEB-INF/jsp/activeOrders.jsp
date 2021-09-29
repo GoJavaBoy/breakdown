@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
 <script type="text/javascript" src="resources/js/pigustralas.common.js" defer></script>
-<script type="text/javascript" src="resources/js/pigustralas.orders.js" defer></script>
+<script type="text/javascript" src="resources/js/pigustralas.activeOrders.js" defer></script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">
@@ -27,8 +26,6 @@
                 <th>Phone number</th>
                 <th>Registered</th>
                 <th>Status</th>
-                <th>Active</th>
-                <th></th>
                 <th></th>
             </tr>
             </thead>
