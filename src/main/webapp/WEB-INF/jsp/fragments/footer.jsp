@@ -3,6 +3,6 @@
 <%--https://getbootstrap.com/docs/4.0/examples/sticky-footer/--%>
 <footer class="footer">
     <div class="container">
-        <span class="text-muted">FOOTER</span>
+        <span class="text-muted">© 2021 PIGUSTRALAS.LT Visos teisės saugomos.</span>
     </div>
 </footer>

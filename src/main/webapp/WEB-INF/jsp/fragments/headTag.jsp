@@ -8,7 +8,7 @@
     <meta name="_csrf" content="${_csrf.token}"/>
     <meta name="_csrf_header" content="${_csrf.headerName}"/>
 
-    <title>APP TITLE</title>
+    <title>by PIGUSTRALAS.LT</title>
     <base href="${pageContext.request.contextPath}/"/>
 
     <link rel="stylesheet" href="resources/css/style.css?v=2">

@@ -60,7 +60,7 @@ public class User extends AbstractNamedEntity implements HasIdAndEmail {
     private Set<Role> roles;
 
     @OneToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
     private Order order;
 
     @Enumerated(EnumType.STRING)

@@ -38,6 +38,9 @@ $(function () {
                 "data": "price"
             },
             {
+                "data": "distance"
+            },
+            {
                 "data": "phoneNumber",
             },
             {
@@ -51,6 +54,9 @@ $(function () {
             },
             {
                 "data": "status"
+            },
+            {
+                "data": "comment"
             },
             {
                 "render": renderAcceptBtn,
@@ -84,4 +90,8 @@ function acceptOrder(id) {
             location.replace("http://localhost:8080/myorder");
         });
     }
+}
+
+function myOrder(){
+    location.replace("http://localhost:8080/myorder");
 }

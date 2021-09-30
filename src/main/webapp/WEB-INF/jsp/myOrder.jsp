@@ -10,18 +10,20 @@
 
 <div class="jumbotron pt-4">
     <div class="container">
-        <h3 class="text-center">TITLE</h3>
+        <h3 class="text-center">Mano užsakymas</h3>
         <%--https://getbootstrap.com/docs/4.0/components/card/--%>
         <br/>
         <table id="activeordertable" class="table table-striped table-dark">
             <thead>
             <tr>
-                <th scope="col">pointA</th>
-                <th scope="col">pointB</th>
-                <th scope="col">price</th>
-                <th scope="col">phoneNumber</th>
-                <th scope="col">registered</th>
-                <th scope="col">status</th>
+                <th scope="col">Išvykimas</th>
+                <th scope="col">Atvykimas</th>
+                <th scope="col">Kaina</th>
+                <th scope="col">Numeris</th>
+                <th scope="col">Įdėtas</th>
+                <th scope="col">Statusas</th>
+                <th scope="col">Info</th>
+                <th scope="col">Atstumas</th>
             </tr>
             </thead>
             <tbody>
@@ -29,7 +31,7 @@
         </table>
         <button class="btn btn-primary" onclick="completeOrder()">
             <span class="fa fa-money"></span>
-            COMPLETE
+            ĮVYKDYTAS
         </button>
     </div>
 </div>

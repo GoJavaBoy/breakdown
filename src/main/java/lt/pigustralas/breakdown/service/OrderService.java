@@ -53,19 +53,13 @@ public class OrderService {
     }
 
     @Transactional
-    public void enable(int id, boolean enabled) {
-        Order order = get(id);
-        order.setActive(enabled);
-        orderRepository.save(order);  // !! need only for JDBC implementation
-    }
-
-    @Transactional
     public void accept(int orderId, int userId) {
         User user = userRepository.get(userId);
         Order order = get(orderId);
         assuredOrderStatusOnAccept(user, order);
         order.setStatus(OrderStatus.IN_PROGRESS);
         user.setOrder(order);
+        userRepository.save(user);
         orderRepository.save(order);
     }
 

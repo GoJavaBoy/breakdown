@@ -11,23 +11,24 @@
 
 <div class="jumbotron pt-4">
     <div class="container">
-        <h3 class="text-center">TITLE</h3>
+        <h3 class="text-center">Užsakymų administravimas</h3>
         <%--https://getbootstrap.com/docs/4.0/components/card/--%>
         <br/>
         <button class="btn btn-primary" onclick="add()">
             <span class="fa fa-plus"></span>
-            Add
+            NAUJAS
         </button>
         <table class="table table-striped" id="datatable">
             <thead>
             <tr>
-                <th>Point A</th>
-                <th>Point B</th>
-                <th>Price</th>
-                <th>Phone number</th>
-                <th>Registered</th>
-                <th>Status</th>
-                <th>Active</th>
+                <th>Išvykimas</th>
+                <th>Atvykimas</th>
+                <th>Kaina</th>
+                <th>Atstumas</th>
+                <th>Numeris</th>
+                <th>Įdėtas</th>
+                <th>Statusas</th>
+                <th>Info</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -48,26 +49,43 @@
                     <input type="hidden" id="id" name="id">
 
                     <div class="form-group">
-                        <label for="pointA" class="col-form-label">point A</label>
+                        <label for="pointA" class="col-form-label">Išvykimas</label>
                         <input type="text" class="form-control" id="pointA" name="pointA"
-                               placeholder="pointA">
+                               placeholder="Kauno g. 7, Vilnius">
                     </div>
 
                     <div class="form-group">
-                        <label for="pointB" class="col-form-label">point B</label>
+                        <label for="pointB" class="col-form-label">Atvykimas</label>
                         <input type="text" class="form-control" id="pointB" name="pointB"
-                               placeholder="pointB">
+                               placeholder="Erfurto g. 35, Vilnius">
                     </div>
 
                     <div class="form-group">
-                        <label for="price" class="col-form-label">Price</label>
+                        <label for="price" class="col-form-label">Kaina</label>
                         <input type="number" class="form-control" id="price" name="price" placeholder="100">
                     </div>
 
                     <div class="form-group">
-                        <label for="phoneNumber" class="col-form-label">Phone Number</label>
+                        <label for="distance" class="col-form-label">Atstumas</label>
+                        <input type="number" class="form-control" id="distance" name="distance" placeholder="15">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber" class="col-form-label">Numeris</label>
                         <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
-                               placeholder="phoneNumber">
+                               placeholder="37052078114">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment" class="col-form-label">Info</label>
+                        <input type="text" class="form-control" id="comment" name="comment"
+                               placeholder="Išmuštas ratas...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status" class="col-form-label">Statusas</label>
+                        <input type="text" class="form-control" id="status" name="status"
+                               placeholder="ACTIVE">
                     </div>
                 </form>
             </div>

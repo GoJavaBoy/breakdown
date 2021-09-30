@@ -26,12 +26,12 @@
                 </button>
             </div>
         </sec:authorize>
-        <div class="lead py-4">Welcome INFO <br>
+        <div class="lead py-4"><strong>Sveiki atvykę į užsakymų paskirstymo sistemą!</strong><br>
         </div>
     </div>
 </div>
 <div class="container">
-    <div class="lead">App description</div>
+    <div class="lead">Sistemoje Jūsų laukia užsakymai ant tralo. <b>Gero kelio!</b></div>
 </div>
 <jsp:include page="fragments/footer.jsp"/>
 <script type="text/javascript">

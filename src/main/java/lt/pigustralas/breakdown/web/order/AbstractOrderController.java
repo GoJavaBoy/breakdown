@@ -42,10 +42,6 @@ public abstract class AbstractOrderController {
         service.update(order);
     }
 
-    public void enable(int id, boolean enabled) {
-        service.enable(id, enabled);
-    }
-
     public void accept(int orderId) {
         int userId = SecurityUtil.authUserId();
         service.accept(orderId, userId);

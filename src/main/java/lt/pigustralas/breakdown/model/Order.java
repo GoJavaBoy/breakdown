@@ -32,9 +32,6 @@ public class Order extends AbstractBaseEntity{
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Date registered = new Date();
 
-    @Column(name = "active", nullable = false, columnDefinition = "bool default true")
-    private boolean active = true;
-
     @OneToOne(mappedBy = "order")
     @JsonIgnore
     private User user;
@@ -43,15 +40,39 @@ public class Order extends AbstractBaseEntity{
     @Column(name = "order_status", nullable = false)
     private OrderStatus status;
 
+    @Column(name = "comment")
+    private String comment;
+
+    @Column(name = "distance")
+    private int distance;
+
     public Order() {
     }
 
-    public Order(Integer id, String pointA, String pointB, String phoneNumber, int price) {
+    public Order(Integer id, String pointA, String pointB, String phoneNumber, int price, int distance, String comment) {
         super(id);
         this.pointA = pointA;
         this.pointB = pointB;
         this.phoneNumber = phoneNumber;
         this.price = price;
+        this.distance = distance;
+        this.comment = comment;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public String getPointA() {
@@ -102,14 +123,6 @@ public class Order extends AbstractBaseEntity{
         this.registered = registered;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
     public User getUser() {
         return user;
     }
@@ -127,7 +140,6 @@ public class Order extends AbstractBaseEntity{
                 ", price=" + price +
                 ", phoneNumber=" + phoneNumber +
                 ", registered=" + registered +
-                ", active=" + active +
                 ", user=" + user +
                 '}';
     }

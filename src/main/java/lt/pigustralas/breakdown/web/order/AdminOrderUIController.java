@@ -39,11 +39,4 @@ public class AdminOrderUIController extends AbstractOrderController {
             super.update(order, order.getId());
         }
     }
-
-    @Override
-    @PostMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void enable(@PathVariable int id, @RequestParam boolean enabled) {
-        super.enable(id, enabled);
-    }
 }

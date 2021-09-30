@@ -39,6 +39,9 @@ $(function () {
                 "data": "pointB"
             },
             {
+                "data": "distance"
+            },
+            {
                 "data": "price"
             },
             {
@@ -57,13 +60,7 @@ $(function () {
                 "data": "status"
             },
             {
-                "data": "active",
-                "render": function (data, type, row) {
-                    if (type === "display") {
-                        return "<input type='checkbox' " + (data ? "checked" : "") + " onclick='enable($(this)," + row.id + ");'/>";
-                    }
-                    return data;
-                },
+                "data": "comment"
             },
             {
                 "render": renderEditBtn,
@@ -84,18 +81,3 @@ $(function () {
         ]
     });
 });
-
-function enable(chkbox, id) {
-    var enabled = chkbox.is(":checked");
-//  https://stackoverflow.com/a/22213543/548473
-    $.ajax({
-        url: orderAjaxUrl + id,
-        type: "POST",
-        data: "enabled=" + enabled
-    }).done(function () {
-        chkbox.closest("tr").attr("data-userEnabled", enabled);
-        successNoty(enabled ? "common.enabled" : "common.disabled");
-    }).fail(function () {
-        $(chkbox).prop("checked", !enabled);
-    });
-}
