@@ -5,7 +5,7 @@
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
 <script type="text/javascript" src="resources/js/pigustralas.common.js" defer></script>
-<script type="text/javascript" src="resources/js/pigustralas.activeOrders.js" defer></script>
+<script type="text/javascript" src="resources/js/pigustralas.myOrder.js" defer></script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">
@@ -13,19 +13,24 @@
         <h3 class="text-center">TITLE</h3>
         <%--https://getbootstrap.com/docs/4.0/components/card/--%>
         <br/>
-        <table class="table table-striped" id="datatable">
+        <table id="activeordertable" class="table table-striped table-dark">
             <thead>
             <tr>
-                <th>Point A</th>
-                <th>Point B</th>
-                <th>Price</th>
-                <th>Phone number</th>
-                <th>Registered</th>
-                <th>Status</th>
-                <th></th>
+                <th scope="col">pointA</th>
+                <th scope="col">pointB</th>
+                <th scope="col">price</th>
+                <th scope="col">phoneNumber</th>
+                <th scope="col">registered</th>
+                <th scope="col">status</th>
             </tr>
             </thead>
+            <tbody>
+            </tbody>
         </table>
+        <button class="btn btn-primary" onclick="completeOrder()">
+            <span class="fa fa-money"></span>
+            COMPLETE
+        </button>
     </div>
 </div>
 <jsp:include page="fragments/footer.jsp"/>

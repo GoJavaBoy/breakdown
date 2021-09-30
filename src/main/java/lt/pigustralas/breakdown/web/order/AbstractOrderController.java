@@ -19,6 +19,11 @@ public abstract class AbstractOrderController {
         return service.get(id);
     }
 
+    public Order getCurrentOrder() {
+        int userId = SecurityUtil.authUserId();
+        return service.getCurrentOrder(userId);
+    }
+
     public void delete(int id) {
         service.delete(id);
     }

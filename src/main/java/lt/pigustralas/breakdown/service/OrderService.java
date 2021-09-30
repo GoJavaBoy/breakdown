@@ -27,6 +27,13 @@ public class OrderService {
         return checkNotFoundWithId(orderRepository.get(id), id);
     }
 
+    public Order getCurrentOrder(int userId) {
+        User user = userRepository.get(userId);
+        Order order = user.getOrder();
+        assuredOrderStatusInProgress(order);
+        return order;
+    }
+
     public void delete(int id) {
         checkNotFoundWithId(orderRepository.delete(id), id);
     }

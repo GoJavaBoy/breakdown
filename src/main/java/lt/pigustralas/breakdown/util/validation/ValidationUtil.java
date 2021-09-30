@@ -99,6 +99,12 @@ public class ValidationUtil {
         }
     }
 
+    public static void assuredOrderStatusInProgress(Order order){
+        if (!order.getStatus().equals(OrderStatus.IN_PROGRESS)){
+            throw new IllegalRequestDataException("Something went wrong with your order, please contact support");
+        }
+    }
+
     public static void assuredOrderStatusOnComplete(User user, Order order){
         if (user.getOrder() == null || !order.getStatus().equals(OrderStatus.IN_PROGRESS)){
             throw new IllegalRequestDataException("You don't have orders to complete");

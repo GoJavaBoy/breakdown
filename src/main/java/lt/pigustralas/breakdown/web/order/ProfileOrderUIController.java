@@ -18,7 +18,7 @@ public class ProfileOrderUIController extends AbstractOrderController {
     public List<Order> getAll() {
         List<Order> activeOrders = super.getAll()
                 .stream()
-                .filter(order -> order.getStatus().equals(OrderStatus.ACTIVE) || order.getStatus().equals(OrderStatus.PENDING))
+                .filter(order -> order.getStatus().equals(OrderStatus.ACTIVE))
                 .collect(Collectors.toList());
         return activeOrders;
     }
@@ -27,6 +27,12 @@ public class ProfileOrderUIController extends AbstractOrderController {
     @GetMapping("/{id}")
     public Order get(@PathVariable int id) {
         return super.get(id);
+    }
+
+    @Override
+    @GetMapping("/active")
+    public Order getCurrentOrder() {
+        return super.getCurrentOrder();
     }
 
     @Override

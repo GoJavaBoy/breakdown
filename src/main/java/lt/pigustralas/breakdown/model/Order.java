@@ -1,5 +1,6 @@
 package lt.pigustralas.breakdown.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -35,6 +36,7 @@ public class Order extends AbstractBaseEntity{
     private boolean active = true;
 
     @OneToOne(mappedBy = "order")
+    @JsonIgnore
     private User user;
 
     @Enumerated(EnumType.STRING)

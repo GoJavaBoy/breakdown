@@ -4,11 +4,7 @@ const orderAjaxUrl = "profile/orders/";
 const ctx = {
     ajaxUrl: orderAjaxUrl,
     updateTable: function () {
-        $.ajax({
-            type: "GET",
-            url: orderAjaxUrl,
-            data: $("#filter").serialize()
-        }).done(updateTableByData);
+        $.get(orderAjaxUrl, updateTableByData);
     }
 };
 
@@ -85,18 +81,7 @@ function acceptOrder(id) {
         }).done(function () {
             ctx.updateTable();
             successNoty("ORDER ACCEPTED");
-        });
-    }
-}
-
-function completeOrder(id) {
-    if (confirm("Confirm")) {
-        $.ajax({
-            url: ctx.ajaxUrl + "complete/" + id,
-            type: "POST"
-        }).done(function () {
-            ctx.updateTable();
-            successNoty("ORDER COMPLETED");
+            location.replace("http://localhost:8080/myorder");
         });
     }
 }
