@@ -87,7 +87,7 @@ function acceptOrder(id) {
         }).done(function () {
             ctx.updateTable();
             successNoty("ORDER ACCEPTED");
-            location.replace("http://localhost:8080/myorder");
+            location.replace(window.location.origin + "/myorder");
         });
     }
 }

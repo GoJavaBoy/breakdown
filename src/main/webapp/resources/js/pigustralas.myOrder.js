@@ -46,7 +46,7 @@ function completeOrder() {
             url: "profile/orders/" + "complete/" + orderId,
         }).done(function () {
             successNoty("ORDER COMPLETED");
-            location.replace("http://localhost:8080/activeorders");
+            location.replace(window.location.origin + "/activeorders");
         });
     }
 }
