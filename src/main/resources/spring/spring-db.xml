@@ -82,6 +82,11 @@
         <jpa:repositories base-package="lt.pigustralas.**.repository"/>
     </beans>
 
+    <beans profile="tomcat">
+        <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/pigustralas"/>
+        <context:property-placeholder location="classpath:db/tomcat.properties" system-properties-mode="OVERRIDE"/>
+    </beans>
+
 
     <beans profile="heroku">
         <context:property-placeholder location="classpath:/db/heroku.properties" system-properties-mode="OVERRIDE"/>
