@@ -10,30 +10,36 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">
-    <div class="container">
-        <h3 class="text-center">Užsakymų administravimas</h3>
-        <%--https://getbootstrap.com/docs/4.0/components/card/--%>
-        <br/>
-        <button class="btn btn-primary" onclick="add()">
-            <span class="fa fa-plus"></span>
-            NAUJAS
-        </button>
-        <table class="table table-striped" id="datatable">
-            <thead>
-            <tr>
-                <th>Išvykimas</th>
-                <th>Atvykimas</th>
-                <th>Kaina</th>
-                <th>Atstumas</th>
-                <th>Numeris</th>
-                <th>Įdėtas</th>
-                <th>Statusas</th>
-                <th>Info</th>
-                <th></th>
-                <th></th>
-            </tr>
-            </thead>
-        </table>
+    <h3 class="text-center">Užsakymų administravimas</h3>
+    <%--https://getbootstrap.com/docs/4.0/components/card/--%>
+    <br/>
+    <button class="btn btn-primary" onclick="add()">
+        <span class="fa fa-plus"></span>
+        NAUJAS
+    </button>
+    <button class="btn btn-primary" onclick="activeOrders()">
+        <span class="fas fa-truck-pickup"></span>
+        AKTYVUS UŽSAKYMAI
+    </button>
+    <div class="dtable-container">
+        <div class="table-responsive">
+            <table class="table table-striped" id="datatable">
+                <thead>
+                <tr>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
+                    <th class="text-center"><span class="fas fa-plane-departure"></span></th>
+                    <th class="text-center"><span class="fas fa-plane-arrival"></span></th>
+                    <th class="text-center"><span class="fas fa-euro-sign"></span></th>
+                    <th class="text-center"><span class="fas fa-road"></span></th>
+                    <th class="text-center"><span class="fas fa-phone-alt"></span></th>
+                    <th class="text-center"><span class="fas fa-clock"></span></th>
+                    <th class="text-center"><span class="fas fa-signal"></span></th>
+                    <th class="text-center"><span class="fas fa-info"></span></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 </div>
 

@@ -9,29 +9,35 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">
-    <div class="container">
-        <h3 class="text-center">Aktyvus užsakymai </h3>
-        <%--https://getbootstrap.com/docs/4.0/components/card/--%>
-        <br/>
-        <button class="btn btn-primary" onclick="myOrder()">
-            <span class="fa fa-user-circle-o"></span>
-            MANO UŽSAKYMAS
-        </button>
-        <table class="table table-striped" id="datatable">
-            <thead>
-            <tr>
-                <th>Išvykimas</th>
-                <th>Atvykimas</th>
-                <th>Kaina</th>
-                <th>Atstumas</th>
-                <th>Numeris</th>
-                <th>Įdėtas</th>
-                <th>Statusas</th>
-                <th>Info</th>
-                <th></th>
-            </tr>
-            </thead>
-        </table>
+    <h3 class="text-center">Aktyvus užsakymai </h3>
+    <%--https://getbootstrap.com/docs/4.0/components/card/--%>
+    <br/>
+    <button class="btn btn-primary" onclick="myOrder()">
+        <span class="fas fa-user"></span>
+        MANO UŽSAKYMAS
+    </button>
+    <button class="btn btn-primary" onclick="allOrders()">
+        <span class="fas fa-search-location"></span>
+        VISI UŽSAKYMAI
+    </button>
+    <div class="dtable-container">
+        <div class="table-responsive">
+            <table class="table table-striped" id="datatable">
+                <thead>
+                <tr>
+                    <th class="text-center"></th>
+                    <th class="text-center"><span class="fas fa-plane-departure"></span></th>
+                    <th class="text-center"><span class="fas fa-plane-arrival"></span></th>
+                    <th class="text-center"><span class="fas fa-euro-sign"></span></th>
+                    <th class="text-center"><span class="fas fa-road"></span></th>
+                    <th class="text-center"><span class="fas fa-phone-alt"></span></th>
+                    <th class="text-center"><span class="fas fa-clock"></span></th>
+                    <th class="text-center"><span class="fas fa-signal"></span></th>
+                    <th class="text-center"><span class="fas fa-info"></span></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 </div>
 <jsp:include page="fragments/footer.jsp"/>

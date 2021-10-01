@@ -33,6 +33,16 @@ $(function () {
     makeEditable({
         "columns": [
             {
+                "render": renderEditBtn,
+                "defaultContent": "",
+                "orderable": false
+            },
+            {
+                "render": renderDeleteBtn,
+                "defaultContent": "",
+                "orderable": false
+            },
+            {
                 "data": "pointA"
             },
             {
@@ -61,16 +71,6 @@ $(function () {
             },
             {
                 "data": "comment"
-            },
-            {
-                "render": renderEditBtn,
-                "defaultContent": "",
-                "orderable": false
-            },
-            {
-                "render": renderDeleteBtn,
-                "defaultContent": "",
-                "orderable": false
             }
         ],
         "order": [
@@ -81,3 +81,7 @@ $(function () {
         ]
     });
 });
+
+function activeOrders(){
+    location.replace("http://localhost:8080/activeorders");
+}

@@ -9,21 +9,20 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">
-    <div class="container">
         <h3 class="text-center">Mano užsakymas</h3>
         <%--https://getbootstrap.com/docs/4.0/components/card/--%>
         <br/>
         <table id="activeordertable" class="table table-striped table-dark">
             <thead>
             <tr>
-                <th scope="col">Išvykimas</th>
-                <th scope="col">Atvykimas</th>
-                <th scope="col">Kaina</th>
-                <th scope="col">Numeris</th>
-                <th scope="col">Įdėtas</th>
-                <th scope="col">Statusas</th>
-                <th scope="col">Info</th>
-                <th scope="col">Atstumas</th>
+                <th class="text-center"><span class="fas fa-plane-departure"></span></th>
+                <th class="text-center"><span class="fas fa-plane-arrival"></span></th>
+                <th class="text-center"><span class="fas fa-road"></span></th>
+                <th class="text-center"><span class="fas fa-phone-alt"></span></th>
+                <th class="text-center"><span class="fas fa-clock"></span></th>
+                <th class="text-center"><span class="fas fa-signal"></span></th>
+                <th class="text-center"><span class="fas fa-info"></span></th>
+                <th class="text-center"><span class="fas fa-euro-sign"></span></th>
             </tr>
             </thead>
             <tbody>
@@ -34,7 +33,6 @@
             ĮVYKDYTAS
         </button>
     </div>
-</div>
 <jsp:include page="fragments/footer.jsp"/>
 </body>
 </html>

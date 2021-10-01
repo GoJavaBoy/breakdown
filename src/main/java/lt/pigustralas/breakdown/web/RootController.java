@@ -1,6 +1,5 @@
 package lt.pigustralas.breakdown.web;
 
-import lt.pigustralas.breakdown.model.OrderStatus;
 import lt.pigustralas.breakdown.model.User;
 import lt.pigustralas.breakdown.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

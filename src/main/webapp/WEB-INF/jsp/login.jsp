@@ -30,9 +30,6 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="lead">Sistemoje Jūsų laukia užsakymai ant tralo. <b>Gero kelio!</b></div>
-</div>
 <jsp:include page="fragments/footer.jsp"/>
 <script type="text/javascript">
     <c:if test="${not empty param.username}">

@@ -47,7 +47,7 @@ function updateRow(id) {
 }
 
 function deleteRow(id) {
-    if (confirm("Confirm")) {
+    if (confirm("Patvirtinkite")) {
         $.ajax({
             url: ctx.ajaxUrl + id,
             type: "DELETE"
@@ -106,7 +106,7 @@ function failNoty(jqXHR) {
 
 function renderEditBtn(data, type, row) {
     if (type === "display") {
-        return "<a onclick='updateRow(" + row.id + ");'><span class='fa fa-pencil'></span></a>";
+        return "<a onclick='updateRow(" + row.id + ");'><span class='fas fa-pencil-alt'></span></a>";
     }
 }
 

@@ -29,6 +29,11 @@ $(function () {
     makeEditable({
         "columns": [
             {
+                "render": renderAcceptBtn,
+                "defaultContent": "",
+                "orderable": false
+            },
+            {
                 "data": "pointA"
             },
             {
@@ -57,11 +62,6 @@ $(function () {
             },
             {
                 "data": "comment"
-            },
-            {
-                "render": renderAcceptBtn,
-                "defaultContent": "",
-                "orderable": false
             }
         ],
         "order": [
@@ -75,12 +75,12 @@ $(function () {
 
 function renderAcceptBtn(data, type, row) {
     if (type === "display") {
-        return "<a onclick='acceptOrder(" + row.id + ");'><span class='fa fa-check'></span></a>";
+        return "<a onclick='acceptOrder(" + row.id + ");'><span class='fas fa-plus-circle'></span></a>";
     }
 }
 
 function acceptOrder(id) {
-    if (confirm("Confirm")) {
+    if (confirm("Patvirtinkite")) {
         $.ajax({
             url: ctx.ajaxUrl + "accept/" + id,
             type: "POST"
@@ -94,4 +94,8 @@ function acceptOrder(id) {
 
 function myOrder(){
     location.replace("http://localhost:8080/myorder");
+}
+
+function allOrders(){
+    location.replace("http://localhost:8080/orders");
 }

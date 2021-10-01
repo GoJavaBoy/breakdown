@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="resources/css/style.css?v=2">
     <link rel="stylesheet" href="webjars/bootstrap/4.6.0-1/css/bootstrap.min.css">
     <link rel="stylesheet" href="webjars/noty/3.1.4/demo/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="webjars/font-awesome/5.15.2/css/all.css">
     <link rel="stylesheet" href="webjars/datatables/1.10.24/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="webjars/noty/3.1.4/lib/noty.css"/>
     <link rel="stylesheet" href="webjars/datetimepicker/2.5.20-1/jquery.datetimepicker.css">

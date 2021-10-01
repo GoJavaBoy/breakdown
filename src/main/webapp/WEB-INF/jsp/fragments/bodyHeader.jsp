@@ -17,7 +17,7 @@
                     <sec:authorize access="isAuthenticated()">
                         <form:form class="form-inline my-2" action="logout" method="post">
                             <button class="btn btn-primary my-1" type="submit">
-                                <span class="fa fa-sign-out"></span>
+                                <span class="fas fa-sign-out-alt"></span>
                             </button>
                         </form:form>
                     </sec:authorize>
@@ -26,7 +26,7 @@
                             <input class="form-control mr-1" type="text" placeholder="Email" name="username">
                             <input class="form-control mr-1" type="password" placeholder="Password" name="password">
                             <button class="btn btn-success" type="submit">
-                                <span class="fa fa-sign-in"></span>
+                                <span class="fas fa-sign-in-alt"></span>
                             </button>
                         </form:form>
                     </sec:authorize>
