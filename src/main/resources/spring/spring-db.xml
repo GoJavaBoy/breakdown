@@ -106,5 +106,4 @@
               p:testOnConnect="true"
               p:testWhileIdle="true"/>
     </beans>
-
 </beans>
