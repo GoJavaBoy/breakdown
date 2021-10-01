@@ -83,5 +83,5 @@ $(function () {
 });
 
 function activeOrders(){
-    location.replace("http://localhost:8080/activeorders");
+    location.replace(window.location.origin + "/activeorders");
 }

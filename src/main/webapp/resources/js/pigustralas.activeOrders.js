@@ -93,9 +93,9 @@ function acceptOrder(id) {
 }
 
 function myOrder(){
-    location.replace("http://localhost:8080/myorder");
+    location.replace(window.location.origin + "/myorder");
 }
 
 function allOrders(){
-    location.replace("http://localhost:8080/orders");
+    location.replace(window.location.origin + "/orders");
 }
