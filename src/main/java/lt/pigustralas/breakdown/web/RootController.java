@@ -30,6 +30,7 @@ public class RootController {
         return "login";
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/orders")
     public String getOrders() {
         return "orders";
