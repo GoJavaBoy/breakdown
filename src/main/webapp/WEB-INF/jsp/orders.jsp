@@ -32,6 +32,10 @@
         <span class="fas fa-truck-pickup"></span>
         AKTYVUS UŽSAKYMAI
     </button>
+    <button class="btn btn-primary" onclick="users()">
+        <span class="fas fa-users"></span>
+        KOMANDA
+    </button>
     <div class="dtable-container">
         <div class="table-responsive">
             <table class="table table-striped" id="datatable">

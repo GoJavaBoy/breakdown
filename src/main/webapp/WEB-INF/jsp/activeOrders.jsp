@@ -14,7 +14,7 @@
     });
 
     var channel = pusher.subscribe('my-channel');
-    channel.bind('refreshTable', function(data) {
+    channel.bind('refreshTable', function (data) {
         ctx.updateTable();
     });
 </script>
@@ -29,10 +29,14 @@
         MANO UŽSAKYMAS
     </button>
     <sec:authorize access="hasRole('ADMIN')">
-    <button class="btn btn-primary" onclick="allOrders()">
-        <span class="fas fa-search-location"></span>
-        VISI UŽSAKYMAI
-    </button>
+        <button class="btn btn-primary" onclick="allOrders()">
+            <span class="fas fa-search-location"></span>
+            VISI UŽSAKYMAI
+        </button>
+        <button class="btn btn-primary" onclick="users()">
+            <span class="fas fa-users"></span>
+            KOMANDA
+        </button>
     </sec:authorize>
     <div class="dtable-container">
         <div class="table-responsive">

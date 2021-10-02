@@ -96,6 +96,3 @@ function myOrder(){
     location.replace(window.location.origin + "/myorder");
 }
 
-function allOrders(){
-    location.replace(window.location.origin + "/orders");
-}

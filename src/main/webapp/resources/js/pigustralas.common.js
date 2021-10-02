@@ -115,3 +115,11 @@ function renderDeleteBtn(data, type, row) {
         return "<a onclick='deleteRow(" + row.id + ");'><span class='fa fa-remove'></span></a>";
     }
 }
+
+function allOrders(){
+    location.replace(window.location.origin + "/orders");
+}
+
+function users(){
+    location.replace(window.location.origin + "/users");
+}
