@@ -6,6 +6,17 @@
 <body>
 <script type="text/javascript" src="resources/js/pigustralas.common.js" defer></script>
 <script type="text/javascript" src="resources/js/pigustralas.activeOrders.js" defer></script>
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+<script>
+    var pusher = new Pusher('6d6694b0ce7831c82174', {
+        cluster: 'eu'
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('refreshTable', function(data) {
+        ctx.updateTable();
+    });
+</script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">

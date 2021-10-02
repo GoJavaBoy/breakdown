@@ -46,6 +46,9 @@
         <!--Cache-->
         <ehcache.version>3.9.2</ehcache.version>
 
+        <!--Pusher-->
+        <pusher.version>1.0.0</pusher.version>
+
         <!--webjars-->
         <webjars-bootstrap.version>4.6.0-1</webjars-bootstrap.version>
         <webjars-jquery.version>3.6.0</webjars-jquery.version>
@@ -257,6 +260,13 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>${jackson-json.version}</version>
+        </dependency>
+
+        <!--Pusher for real time update-->
+        <dependency>
+            <groupId>com.pusher</groupId>
+            <artifactId>pusher-http-java</artifactId>
+            <version>${pusher.version}</version>
         </dependency>
 
         <!--Test-->
