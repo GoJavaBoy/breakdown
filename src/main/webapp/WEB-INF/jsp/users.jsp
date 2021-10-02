@@ -48,19 +48,16 @@
             <div class="modal-body">
                 <form id="detailsForm">
                     <input type="hidden" id="id" name="id">
-
                     <div class="form-group">
                         <label for="name" class="col-form-label">Name</label>
                         <input type="text" class="form-control" id="name" name="name"
                                placeholder="Name">
                     </div>
-
                     <div class="form-group">
                         <label for="email" class="col-form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email"
-                               placeholder="Email">a
+                               placeholder="Email">
                     </div>
-
                     <div class="form-group">
                         <label for="password" class="col-form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password"
