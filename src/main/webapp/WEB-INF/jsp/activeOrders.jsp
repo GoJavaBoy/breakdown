@@ -49,7 +49,6 @@
                     <th class="text-center"><span class="fas fa-plane-arrival"></span></th>
                     <th class="text-center"><span class="fas fa-euro-sign"></span></th>
                     <th class="text-center"><span class="fas fa-road"></span></th>
-                    <th class="text-center"><span class="fas fa-phone-alt"></span></th>
                     <th class="text-center"><span class="fas fa-clock"></span></th>
                     <th class="text-center"><span class="fas fa-signal"></span></th>
                     <th class="text-center"><span class="fas fa-info"></span></th>
