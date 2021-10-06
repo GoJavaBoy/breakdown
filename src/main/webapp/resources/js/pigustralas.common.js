@@ -1,4 +1,5 @@
 let form;
+const applicationServerPublicKey = 'BExOtl9jKBabPankjYFEdiTgLEug8HcaD36vaVIh3A_C-3X86ob1qLK71uZEktIi39dmhaxC49Sf94nLIY3-Zac';
 
 function makeEditable(datatableOpts) {
     ctx.datatableApi = $("#datatable").DataTable(
@@ -123,3 +124,43 @@ function allOrders(){
 function users(){
     location.replace(window.location.origin + "/users");
 }
+
+$(document).ready(async function() {
+    Notification.requestPermission().then(function (permission) {
+        console.log(permission);
+    });
+notifyMe()
+})
+
+function notifyMe() {
+    if (!window.Notification) {
+        console.log('Browser does not support notifications.');
+    } else {
+        // check if permission is already granted
+        if (Notification.permission === 'granted') {
+            // show notification here
+            var notify = new Notification('Hi there!', {
+                body: 'How are you doing?',
+            });
+        } else {
+            // request permission from user
+            Notification.requestPermission().then(function (p) {
+                if (p === 'granted') {
+                    // show notification here
+                    var notify = new Notification('Hi there!', {
+                        body: 'How are you doing?',
+                    });
+                } else {
+                    console.log('User blocked notifications.');
+                }
+            }).catch(function (err) {
+                console.error(err);
+            });
+        }
+    }
+}
+
+
+
+
+

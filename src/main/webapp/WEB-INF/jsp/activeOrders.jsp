@@ -16,7 +16,7 @@
     var channel = pusher.subscribe('my-channel');
     channel.bind('refreshTable', function (data) {
         ctx.updateTable();
-        alert("TABLE UPDATED!")
+       // alert("TABLE UPDATED!")
     });
 </script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
