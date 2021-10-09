@@ -15,7 +15,7 @@ public class RootController {
 
     @GetMapping("/")
     public String root() {
-        return "redirect:orders";
+        return "redirect:activeorders";
     }
 
     //    @Secured("ROLE_ADMIN")

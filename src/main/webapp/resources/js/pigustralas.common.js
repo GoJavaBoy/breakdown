@@ -128,6 +128,7 @@ function users(){
 $(document).ready(async function() {
     Notification.requestPermission().then(function (permission) {
         console.log(permission);
+        new Notification("H!");
     });
 notifyMe()
 })
