@@ -1,3 +1,4 @@
+const {find} = require("./jquery");
 let form;
 const applicationServerPublicKey = 'BExOtl9jKBabPankjYFEdiTgLEug8HcaD36vaVIh3A_C-3X86ob1qLK71uZEktIi39dmhaxC49Sf94nLIY3-Zac';
 
@@ -45,6 +46,13 @@ function updateRow(id) {
         });
         $('#editRow').modal();
     });
+}
+
+function showComment(id) {
+    $.get(ctx.ajaxUrl + id, function (data) {
+        $('#editRow2 p').text(data.comment);
+    })
+    $('#editRow2').modal();
 }
 
 function deleteRow(id) {
@@ -108,6 +116,12 @@ function failNoty(jqXHR) {
 function renderEditBtn(data, type, row) {
     if (type === "display") {
         return "<a onclick='updateRow(" + row.id + ");'><span class='fas fa-pencil-alt'></span></a>";
+    }
+}
+
+function renderComment(data, type, row) {
+    if (type === "display") {
+        return "<a onclick='showComment(" + row.id + ");'><span class='fas fa-pencil-alt'></span></a>";
     }
 }
 

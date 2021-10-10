@@ -41,17 +41,16 @@
     </sec:authorize>
     <div class="dtable-container">
         <div class="table-responsive">
-            <table class="table table-striped" id="datatable">
+            <table class="table cards table-striped" id="datatable">
                 <thead>
                 <tr>
-                    <th class="text-center"></th>
-                    <th class="text-center"><span class="fas fa-plane-departure"></span></th>
-                    <th class="text-center"><span class="fas fa-plane-arrival"></span></th>
-                    <th class="text-center"><span class="fas fa-euro-sign"></span></th>
-                    <th class="text-center"><span class="fas fa-road"></span></th>
-                    <th class="text-center"><span class="fas fa-clock"></span></th>
-                    <th class="text-center"><span class="fas fa-signal"></span></th>
-                    <th class="text-center"><span class="fas fa-info"></span></th>
+                    <th class="text-center">Paimti</th>
+                    <th class="text-center"><span class="fas fa-map-marked-alt">Maršrutas</span></th>
+                    <th class="text-center"><span class="fas fa-euro-sign">Kaina</span></th>
+                    <th class="text-center"><span class="fas fa-road">Atstumas</span></th>
+                    <th class="text-center"><span class="fas fa-clock">Sudarytas</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Statusas</span></th>
+                    <th class="text-center"><span class="fas fa-info">Info</span></th>
                 </tr>
                 </thead>
             </table>

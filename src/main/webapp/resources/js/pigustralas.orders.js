@@ -31,6 +31,10 @@ $.ajaxSetup({
 
 $(function () {
     makeEditable({
+        'dom':
+            "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'<'float-md-right ml-2'B>f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
         "columns": [
             {
                 "render": renderEditBtn,
@@ -43,19 +47,44 @@ $(function () {
                 "orderable": false
             },
             {
-                "data": "pointA"
+                "data": "pointA",
+                "render": function(data, type, row, meta){
+                    if(type === 'display'){
+                        data = '<a class="fas fa-map-marker-alt" href="' + data + '"/>';
+                    }
+
+                    return data;
+                }
             },
             {
-                "data": "pointB"
+                "data": "price",
+                "render": function(data, type, row, meta){
+                    if(type === 'display'){
+                        data = "€" + data;
+                    }
+
+                    return data;
+                }
             },
             {
-                "data": "distance"
-            },
-            {
-                "data": "price"
+                "data": "distance",
+                "render": function(data, type, row, meta){
+                    if(type === 'display'){
+                        data = data + "km";
+                    }
+
+                    return data;
+                }
             },
             {
                 "data": "phoneNumber",
+                "render": function(data, type, row, meta){
+                    if(type === 'display'){
+                        data = '<a class="fas fa-phone-volume" href="tel:' + data + '"/>';
+                    }
+
+                    return data;
+                }
             },
             {
                 "data": "registered",
@@ -70,9 +99,33 @@ $(function () {
                 "data": "status"
             },
             {
-                "data": "comment"
+                "render": renderComment,
+                "defaultContent": "",
+                "orderable": false
             }
         ],
+        'drawCallback': function (settings) {
+            var api = this.api();
+            var $table = $(api.table().node());
+                // Create an array of labels containing all table headers
+                var labels = [];
+                $('thead th', $table).each(function () {
+                    labels.push($(this).text());
+                });
+
+                // Add data-label attribute to each cell
+                $('tbody tr', $table).each(function () {
+                    $(this).find('td').each(function (column) {
+                        $(this).attr('data-label', labels[column]);
+                    });
+                });
+
+                var max = 0;
+                $('tbody tr', $table).each(function () {
+                    max = Math.max($(this).height(), max);
+                }).height(max);
+
+        },
         "order": [
             [
                 0,

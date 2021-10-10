@@ -5,7 +5,7 @@
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
 <script type="text/javascript" src="resources/js/pigustralas.common.js" defer></script>
-<script type="text/javascript" src="resources/js/pigustralas.myOrder.js" defer></script>
+<script type="text/javascript" src="resources/js/pigustralas.myOrderNEW.js" defer></script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">
@@ -14,21 +14,18 @@
     <br/>
     <div class="dtable-container">
         <div class="table-responsive">
-            <table id="activeordertable" class="table table-striped table-dark">
+            <table class="table cards table-striped" id="datatable">
                 <thead>
                 <tr>
-                    <th class="text-center"><span class="fas fa-plane-departure"></span></th>
-                    <th class="text-center"><span class="fas fa-plane-arrival"></span></th>
-                    <th class="text-center"><span class="fas fa-road"></span></th>
-                    <th class="text-center"><span class="fas fa-phone-alt"></span></th>
-                    <th class="text-center"><span class="fas fa-clock"></span></th>
-                    <th class="text-center"><span class="fas fa-signal"></span></th>
-                    <th class="text-center"><span class="fas fa-info"></span></th>
-                    <th class="text-center"><span class="fas fa-euro-sign"></span></th>
+                    <th class="text-center"><span class="fas fa-map-marked-alt">Maršrutas</span></th>
+                    <th class="text-center"><span class="fas fa-euro-sign">Kaina</span></th>
+                    <th class="text-center"><span class="fas fa-road">Atstumas</span></th>
+                    <th class="text-center"><span class="fas fa-phone-square-alt">Tel. numeris</span></th>
+                    <th class="text-center"><span class="fas fa-clock">Sudarytas</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Statusas</span></th>
+                    <th class="text-center"><span class="fas fa-info">Info</span></th>
                 </tr>
                 </thead>
-                <tbody>
-                </tbody>
             </table>
         </div>
     </div>

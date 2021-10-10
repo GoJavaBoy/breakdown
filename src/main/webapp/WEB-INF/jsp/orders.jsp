@@ -38,19 +38,18 @@
     </button>
     <div class="dtable-container">
         <div class="table-responsive">
-            <table class="table table-striped" id="datatable">
+            <table class="table cards table-striped" id="datatable">
                 <thead>
                 <tr>
-                    <th class="text-center"></th>
-                    <th class="text-center"></th>
-                    <th class="text-center"><span class="fas fa-plane-departure"></span></th>
-                    <th class="text-center"><span class="fas fa-plane-arrival"></span></th>
-                    <th class="text-center"><span class="fas fa-euro-sign"></span></th>
-                    <th class="text-center"><span class="fas fa-road"></span></th>
-                    <th class="text-center"><span class="fas fa-phone-alt"></span></th>
-                    <th class="text-center"><span class="fas fa-clock"></span></th>
-                    <th class="text-center"><span class="fas fa-signal"></span></th>
-                    <th class="text-center"><span class="fas fa-info"></span></th>
+                    <th class="text-center">Redaguoti</th>
+                    <th class="text-center">Pašalinti</th>
+                    <th class="text-center"><span class="fas fa-map-marked-alt">Maršrutas</span></th>
+                    <th class="text-center"><span class="fas fa-euro-sign">Kaina</span></th>
+                    <th class="text-center"><span class="fas fa-road">Atstumas</span></th>
+                    <th class="text-center"><span class="fas fa-phone-square-alt">Tel. numeris</span></th>
+                    <th class="text-center"><span class="fas fa-clock">Sudarytas</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Statusas</span></th>
+                    <th class="text-center"><span class="fas fa-info">Info</span></th>
                 </tr>
                 </thead>
             </table>
@@ -71,7 +70,7 @@
 
                     <div class="form-group">
                         <label for="pointA" class="col-form-label">Išvykimas</label>
-                        <input type="text" class="form-control" id="pointA" name="pointA"
+                        <input type="url" class="form-control" id="pointA" name="pointA"
                                placeholder="Kauno g. 7, Vilnius">
                     </div>
 
@@ -123,6 +122,27 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" tabindex="-1" id="editRow2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalTitle2"></h4>
+                <button type="button" class="close" data-dismiss="modal" onclick="closeNoty()">&times;</button>
+            </div>
+            <div class="modal-body">
+                    <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeNoty()">
+                    <span class="fa fa-close"></span>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <jsp:include page="fragments/footer.jsp"/>
 </body>
 </html>
