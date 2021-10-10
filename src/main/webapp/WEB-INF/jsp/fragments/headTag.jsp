@@ -27,4 +27,19 @@
     <script src="webjars/noty/3.1.4/lib/noty.min.js" defer></script>
     <script src="webjars/datatables/1.10.24/js/dataTables.bootstrap4.min.js" defer></script>
     <script src="webjars/datetimepicker/2.5.20-1/build/jquery.datetimepicker.full.min.js" defer></script>
+
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "48a5cd6a-1420-4efe-8ce3-9aece2929c27",
+                safari_web_id: "web.onesignal.auto.129ff751-f997-4966-a642-dcf62166c788",
+                notifyButton: {
+                    enable: true,
+                },
+                subdomainName: "pigustralas-or",
+            });
+        });
+    </script>
 </head>
