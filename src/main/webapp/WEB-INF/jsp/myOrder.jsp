@@ -29,7 +29,7 @@
             </table>
         </div>
     </div>
-    <button class="btn btn-primary" onclick="completeOrder()">
+    <button class="btn btn-primary finishOrder" onclick="completeOrder()">
         <span class="fa fa-money"></span>
         ĮVYKDYTAS
     </button>
