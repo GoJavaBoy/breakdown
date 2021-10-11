@@ -1,4 +1,3 @@
-const {find} = require("./jquery");
 let form;
 const applicationServerPublicKey = 'BExOtl9jKBabPankjYFEdiTgLEug8HcaD36vaVIh3A_C-3X86ob1qLK71uZEktIi39dmhaxC49Sf94nLIY3-Zac';
 
@@ -121,7 +120,7 @@ function renderEditBtn(data, type, row) {
 
 function renderComment(data, type, row) {
     if (type === "display") {
-        return "<a onclick='showComment(" + row.id + ");'><span class='fas fa-pencil-alt'></span></a>";
+        return "<a onclick='showComment(" + row.id + ");'><span class='fas fa-comment-dots'></span></a>";
     }
 }
 

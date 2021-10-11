@@ -47,6 +47,10 @@ public class RootController {
 
     @GetMapping("/myorder")
     public String getMyOrder() {
+        User user = service.get(SecurityUtil.get().getUser().getId());
+        if (user.getOrder()==null){
+            return "activeOrders";
+        }
         return "myOrder";
     }
 }

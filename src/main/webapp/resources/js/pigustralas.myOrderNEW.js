@@ -1,6 +1,13 @@
 let result;
 let orderId;
 
+const orderAjaxUrl = "profile/orders/";
+
+// https://stackoverflow.com/a/5064235/548473
+const ctx = {
+    ajaxUrl: orderAjaxUrl
+};
+
 $.ajaxSetup({
     converters: {
         "text json": function (stringData) {
@@ -32,11 +39,12 @@ $.ajax({
         orderId = data.id;
         delete data.active;
         result = Object.values(data);
+        init()
     }
 });
 
 
-$(document).ready(function () {
+function init () {
     var t = $('#datatable').DataTable( {
         'drawCallback': function (settings) {
             var api = this.api();
@@ -68,11 +76,9 @@ $(document).ready(function () {
         '<a class="fas fa-phone-volume" href="tel:' + result[4] + '"/>',
         result[5],
         result[6],
-        //TODO
-        //add render comment
-        result[7]
+        "<a onclick='showComment(" + orderId + ");'><span class='fas fa-comment-dots'></span></a>"
     ]).draw(false);
-});
+};
 
 function completeOrder() {
     if (confirm("Patvirtinkite")) {

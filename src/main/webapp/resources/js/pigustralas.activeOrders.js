@@ -80,7 +80,9 @@ $(function () {
                 "data": "status"
             },
             {
-                "data": "comment"
+                "render": renderComment,
+                "defaultContent": "",
+                "orderable": false
             }
         ],
         'drawCallback': function (settings) {
@@ -135,24 +137,5 @@ function acceptOrder(id) {
 
 function myOrder(){
     location.replace(window.location.origin + "/myorder");
-}
-
-// create and show the notification
-const showNotification = () => {
-    // create a new notification
-    const notification = new Notification('JavaScript Notification API', {
-        body: 'This is a JavaScript Notification API demo',
-        vibrate: true
-    });
-
-    // close the notification after 10 seconds
-    setTimeout(() => {
-        notification.close();
-    }, 10 * 1000);
-
-    // navigate to a URL
-    notification.addEventListener('click', () => {
-        window.open('https://www.javascripttutorial.net/web-apis/javascript-notification/', '_blank');
-    });
 }
 

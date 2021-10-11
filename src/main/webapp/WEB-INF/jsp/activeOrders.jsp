@@ -56,6 +56,25 @@
             </table>
         </div>
     </div>
+    <div class="modal fade" tabindex="-1" id="editRow2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalTitle2"></h4>
+                    <button type="button" class="close" data-dismiss="modal" onclick="closeNoty()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeNoty()">
+                        <span class="fa fa-close"></span>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <jsp:include page="fragments/footer.jsp"/>
 </body>
