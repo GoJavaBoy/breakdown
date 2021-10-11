@@ -22,21 +22,21 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">
-    <h3 class="text-center">Aktyvus užsakymai </h3>
+    <h3 class="text-center">Active orders</h3>
     <%--https://getbootstrap.com/docs/4.0/components/card/--%>
     <br/>
     <button class="btn btn-primary" onclick="myOrder()">
         <span class="fas fa-user"></span>
-        MANO UŽSAKYMAS
+        CURRENT ORDER
     </button>
     <sec:authorize access="hasRole('ADMIN')">
         <button class="btn btn-primary" onclick="allOrders()">
             <span class="fas fa-search-location"></span>
-            VISI UŽSAKYMAI
+            ALL ORDERS
         </button>
         <button class="btn btn-primary" onclick="users()">
             <span class="fas fa-users"></span>
-            KOMANDA
+            USERS
         </button>
     </sec:authorize>
     <div class="dtable-container">
@@ -44,12 +44,12 @@
             <table class="table cards table-striped" id="datatable">
                 <thead>
                 <tr>
-                    <th class="text-center">Paimti</th>
-                    <th class="text-center"><span class="fas fa-map-marked-alt">Maršrutas</span></th>
-                    <th class="text-center"><span class="fas fa-euro-sign">Kaina</span></th>
-                    <th class="text-center"><span class="fas fa-road">Atstumas</span></th>
-                    <th class="text-center"><span class="fas fa-clock">Sudarytas</span></th>
-                    <th class="text-center"><span class="fas fa-signal">Statusas</span></th>
+                    <th class="text-center">Collect</th>
+                    <th class="text-center"><span class="fas fa-map-marked-alt">Route</span></th>
+                    <th class="text-center"><span class="fas fa-euro-sign">Price</span></th>
+                    <th class="text-center"><span class="fas fa-road">Distance</span></th>
+                    <th class="text-center"><span class="fas fa-clock">Created</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Status</span></th>
                     <th class="text-center"><span class="fas fa-info">Info</span></th>
                 </tr>
                 </thead>

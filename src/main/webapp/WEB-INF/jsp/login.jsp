@@ -26,7 +26,7 @@
                 </button>
             </div>
         </sec:authorize>
-        <div class="lead py-4"><strong>Sveiki atvykę į užsakymų paskirstymo sistemą!</strong><br>
+        <div class="lead py-4"><strong>Order management system for Lithuanian recovery service. Developed by pigustralas.lt</strong><br>
         </div>
     </div>
 </div>

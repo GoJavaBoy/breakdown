@@ -12,14 +12,14 @@
 
 <div class="jumbotron pt-4">
     <div class="container">
-        <h3 class="text-center">Komanda</h3>
+        <h3 class="text-center">Users</h3>
         <button class="btn btn-primary" onclick="add()">
             <span class="fas fa-user-plus"></span>
-            NAUJAS
+            NEW
         </button>
         <button class="btn btn-primary" onclick="allOrders()">
             <span class="fas fa-search-location"></span>
-            VISI UŽSAKYMAI
+            ALL ORDERS
         </button>
         <table class="table table-striped" id="datatable">
             <thead>

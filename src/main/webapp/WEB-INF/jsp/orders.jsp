@@ -21,34 +21,34 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">
-    <h3 class="text-center">Užsakymų administravimas</h3>
+    <h3 class="text-center">Admin panel</h3>
     <%--https://getbootstrap.com/docs/4.0/components/card/--%>
     <br/>
     <button class="btn btn-primary" onclick="add()">
         <span class="fa fa-plus"></span>
-        NAUJAS
+        NEW
     </button>
     <button class="btn btn-primary" onclick="activeOrders()">
         <span class="fas fa-truck-pickup"></span>
-        AKTYVUS UŽSAKYMAI
+        ACTIVE ORDERS
     </button>
     <button class="btn btn-primary" onclick="users()">
         <span class="fas fa-users"></span>
-        KOMANDA
+        USERS
     </button>
     <div class="dtable-container">
         <div class="table-responsive">
             <table class="table cards table-striped" id="datatable">
                 <thead>
                 <tr>
-                    <th class="text-center">Redaguoti</th>
-                    <th class="text-center">Pašalinti</th>
-                    <th class="text-center"><span class="fas fa-map-marked-alt">Maršrutas</span></th>
-                    <th class="text-center"><span class="fas fa-euro-sign">Kaina</span></th>
-                    <th class="text-center"><span class="fas fa-road">Atstumas</span></th>
-                    <th class="text-center"><span class="fas fa-phone-square-alt">Tel. numeris</span></th>
-                    <th class="text-center"><span class="fas fa-clock">Sudarytas</span></th>
-                    <th class="text-center"><span class="fas fa-signal">Statusas</span></th>
+                    <th class="text-center">Edit</th>
+                    <th class="text-center">Delete</th>
+                    <th class="text-center"><span class="fas fa-map-marked-alt">Route</span></th>
+                    <th class="text-center"><span class="fas fa-euro-sign">Price</span></th>
+                    <th class="text-center"><span class="fas fa-road">Distance</span></th>
+                    <th class="text-center"><span class="fas fa-phone-square-alt">Phone number</span></th>
+                    <th class="text-center"><span class="fas fa-clock">Created</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Status</span></th>
                     <th class="text-center"><span class="fas fa-info">Info</span></th>
                 </tr>
                 </thead>
@@ -69,29 +69,23 @@
                     <input type="hidden" id="id" name="id">
 
                     <div class="form-group">
-                        <label for="pointA" class="col-form-label">Išvykimas</label>
+                        <label for="pointA" class="col-form-label">Route</label>
                         <input type="url" class="form-control" id="pointA" name="pointA"
                                placeholder="Kauno g. 7, Vilnius">
                     </div>
 
                     <div class="form-group">
-                        <label for="pointB" class="col-form-label">Atvykimas</label>
-                        <input type="text" class="form-control" id="pointB" name="pointB"
-                               placeholder="Erfurto g. 35, Vilnius">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="price" class="col-form-label">Kaina</label>
+                        <label for="price" class="col-form-label">Price</label>
                         <input type="number" class="form-control" id="price" name="price" placeholder="100">
                     </div>
 
                     <div class="form-group">
-                        <label for="distance" class="col-form-label">Atstumas</label>
+                        <label for="distance" class="col-form-label">Distance</label>
                         <input type="number" class="form-control" id="distance" name="distance" placeholder="15">
                     </div>
 
                     <div class="form-group">
-                        <label for="phoneNumber" class="col-form-label">Numeris</label>
+                        <label for="phoneNumber" class="col-form-label">Phone number</label>
                         <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
                                placeholder="37052078114">
                     </div>
@@ -103,7 +97,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="status" class="col-form-label">Statusas</label>
+                        <label for="status" class="col-form-label">Status</label>
                         <input type="text" class="form-control" id="status" name="status"
                                placeholder="ACTIVE">
                     </div>
