@@ -9,7 +9,7 @@ CREATE TABLE orders
 (
     id            INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
     point_a             VARCHAR                           NOT NULL,
-    point_b             VARCHAR                           NOT NULL,
+    point_b             VARCHAR                           NULL,
     price               INTEGER                           NOT NULL,
     registered          TIMESTAMP           DEFAULT now() NOT NULL,
     phone_number        VARCHAR                           NOT NULL,

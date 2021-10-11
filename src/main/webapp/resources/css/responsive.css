@@ -67,4 +67,8 @@
         max-width: 100% !important;
         text-align: center;
     }
+
+    table.dataTable td.dataTables_empty, table.dataTable th.dataTables_empty {
+        display: none;
+    }
 }

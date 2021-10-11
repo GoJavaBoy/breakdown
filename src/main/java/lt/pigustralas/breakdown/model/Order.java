@@ -16,8 +16,7 @@ public class Order extends AbstractBaseEntity{
     @NotBlank
     private String pointA;
 
-    @Column(name = "point_b", nullable = false)
-    @NotBlank
+    @Column(name = "point_b", nullable = true)
     private String pointB;
 
     @Column(name = "price")
