@@ -63,4 +63,8 @@
         display: none;
     }
 
+    .loginContainer {
+        max-width: 100% !important;
+        text-align: center;
+    }
 }

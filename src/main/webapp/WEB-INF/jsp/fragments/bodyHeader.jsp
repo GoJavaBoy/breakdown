@@ -4,7 +4,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark py-0">
-    <div class="container">
+    <div class="container loginContainer">
         <a href="activeorders" class="navbar-brand">by PIGUSTRALAS.LT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
