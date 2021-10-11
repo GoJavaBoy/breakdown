@@ -78,7 +78,7 @@ function init () {
         result[6],
         "<a onclick='showComment(" + orderId + ");'><span class='fas fa-comment-dots'></span></a>"
     ]).draw(false);
-};
+}
 
 function completeOrder() {
     if (confirm("Patvirtinkite")) {
