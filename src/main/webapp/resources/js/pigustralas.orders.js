@@ -48,8 +48,8 @@ $(function () {
             },
             {
                 "data": "pointA",
-                "render": function(data, type, row, meta){
-                    if(type === 'display'){
+                "render": function (data, type, row, meta) {
+                    if (type === 'display') {
                         data = '<a class="fas fa-map-marker-alt" href="' + data + '"/>';
                     }
 
@@ -58,8 +58,8 @@ $(function () {
             },
             {
                 "data": "price",
-                "render": function(data, type, row, meta){
-                    if(type === 'display'){
+                "render": function (data, type, row, meta) {
+                    if (type === 'display') {
                         data = "€" + data;
                     }
 
@@ -68,8 +68,8 @@ $(function () {
             },
             {
                 "data": "distance",
-                "render": function(data, type, row, meta){
-                    if(type === 'display'){
+                "render": function (data, type, row, meta) {
+                    if (type === 'display') {
                         data = data + "km";
                     }
 
@@ -78,8 +78,8 @@ $(function () {
             },
             {
                 "data": "phoneNumber",
-                "render": function(data, type, row, meta){
-                    if(type === 'display'){
+                "render": function (data, type, row, meta) {
+                    if (type === 'display') {
                         data = '<a class="fas fa-phone-volume" href="tel:' + data + '"/>';
                     }
 
@@ -107,23 +107,23 @@ $(function () {
         'drawCallback': function (settings) {
             var api = this.api();
             var $table = $(api.table().node());
-                // Create an array of labels containing all table headers
-                var labels = [];
-                $('thead th', $table).each(function () {
-                    labels.push($(this).text());
-                });
+            // Create an array of labels containing all table headers
+            var labels = [];
+            $('thead th', $table).each(function () {
+                labels.push($(this).text());
+            });
 
-                // Add data-label attribute to each cell
-                $('tbody tr', $table).each(function () {
-                    $(this).find('td').each(function (column) {
-                        $(this).attr('data-label', labels[column]);
-                    });
+            // Add data-label attribute to each cell
+            $('tbody tr', $table).each(function () {
+                $(this).find('td').each(function (column) {
+                    $(this).attr('data-label', labels[column]);
                 });
+            });
 
-                var max = 0;
-                $('tbody tr', $table).each(function () {
-                    max = Math.max($(this).height(), max);
-                }).height(max);
+            var max = 0;
+            $('tbody tr', $table).each(function () {
+                max = Math.max($(this).height(), max);
+            }).height(max);
 
         },
         "order": [
@@ -133,8 +133,19 @@ $(function () {
             ]
         ]
     });
+    getReadyUsers();
 });
 
-function activeOrders(){
+function activeOrders() {
     location.replace(window.location.origin + "/activeorders");
+}
+
+function getReadyUsers(){
+    $.ajax({
+        url: "admin/users/readyUsers",
+        type: "GET",
+    }).done(function (data) {
+        $("#readyUsers").text("Ready to drive: " + data)
+    }).fail(function () {
+    });
 }

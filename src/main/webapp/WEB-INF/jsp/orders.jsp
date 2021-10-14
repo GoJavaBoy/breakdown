@@ -24,6 +24,10 @@
     <h3 class="text-center">Admin panel</h3>
     <%--https://getbootstrap.com/docs/4.0/components/card/--%>
     <br/>
+    <div>
+        <div class="refresh"><p id="readyUsers"></p></div>
+        <div class="refresh"><button class="fas fa-sync-alt refreshBtn" onclick="getReadyUsers()"></button></div>
+    </div>
     <button class="btn btn-primary" onclick="add()">
         <span class="fa fa-plus"></span>
         NEW

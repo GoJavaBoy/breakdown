@@ -148,3 +148,23 @@ div.dataTables_wrapper div.dataTables_filter {
     transform: translateX(calc(2rem - 0.25rem));
 }
 
+#readyUsers {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.refresh {
+    display: inline-block;
+}
+
+.fa-sync-alt:before {
+    font-size: 2em;
+    padding-left: 0.4em;
+    color: lightseagreen;
+}
+
+.refreshBtn {
+    padding: 0;
+    border: none;
+    background: none;
+}

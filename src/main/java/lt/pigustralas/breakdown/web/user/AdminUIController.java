@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/admin/users", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -21,6 +22,12 @@ public class AdminUIController extends AbstractUserController {
     @GetMapping("/{id}")
     public User get(@PathVariable int id) {
         return super.get(id);
+    }
+
+    @GetMapping("/readyUsers")
+    public int getReadyUsers() {
+        List<User> readyUsers = getAll().stream().filter(User::isEnabled).collect(Collectors.toList());
+        return readyUsers.size();
     }
 
     @Override
