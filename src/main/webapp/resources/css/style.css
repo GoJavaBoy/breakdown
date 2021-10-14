@@ -113,3 +113,38 @@ tr.selected td:before {
 .table .avatar {
     width: 50px;
 }
+
+div.dataTables_wrapper div.dataTables_filter {
+    display: none;
+}
+
+
+.switch-handle {
+    width: 20%;
+}
+
+.custom-control-label {
+    color: white;
+    font-size: x-large;
+}
+
+.custom-switch.custom-switch-lg .custom-control-label {
+    padding-left: 2rem;
+}
+
+.custom-switch.custom-switch-lg .custom-control-label::before {
+    height: 2rem;
+    width: calc(3rem + 0.75rem);
+    border-radius: 4rem;
+}
+
+.custom-switch.custom-switch-lg .custom-control-label::after {
+    width: calc(2rem - 4px);
+    height: calc(2rem - 4px);
+    border-radius: calc(3rem - (2rem / 2));
+}
+
+.custom-switch.custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
+    transform: translateX(calc(2rem - 0.25rem));
+}
+

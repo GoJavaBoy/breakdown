@@ -130,20 +130,36 @@ function renderDeleteBtn(data, type, row) {
     }
 }
 
-function allOrders(){
+function allOrders() {
     location.replace(window.location.origin + "/orders");
 }
 
-function users(){
+function users() {
     location.replace(window.location.origin + "/users");
 }
 
-$(document).ready(async function() {
+$.ajax({
+    url: "/profile",
+    type: "GET",
+    cache: false
+}).done(function (data) {
+    console.log(data.enabled)
+    let enabled = data.enabled;
+    $('#statusBox').append("<div class='custom-control custom-switch custom-switch-lg'>" +
+        "<input type='checkbox' class='custom-control-input' id='readyCheckBox' " + (enabled ? "checked" : "") + " onclick='enable($(this))'/>" +
+        "<label class='custom-control-label' for='readyCheckBox'></label>" +
+        "</div>");
+
+    $("label[for*='readyCheckBox']").text(enabled ? "Ready" : "Not Ready")
+}).fail(function () {
+});
+
+$(document).ready(async function () {
     Notification.requestPermission().then(function (permission) {
         console.log(permission);
         new Notification("H!");
     });
-notifyMe()
+    notifyMe()
 })
 
 function notifyMe() {
@@ -175,6 +191,18 @@ function notifyMe() {
 }
 
 
+function enable(chkbox) {
+    var enabled = chkbox.is(":checked");
+//  https://stackoverflow.com/a/22213543/548473
+    $.ajax({
+        url: "/profile",
+        type: "POST",
+        data: "enabled=" + enabled
+    }).done(function () {
+        $("label[for*='readyCheckBox']").text(enabled ? "Ready" : "Not Ready")
+    }).fail(function () {
+    });
+}
 
 
 
