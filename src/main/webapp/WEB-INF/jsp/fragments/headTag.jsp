@@ -34,12 +34,11 @@
         window.OneSignal = window.OneSignal || [];
         OneSignal.push(function() {
             OneSignal.init({
-                appId: "48a5cd6a-1420-4efe-8ce3-9aece2929c27",
-                safari_web_id: "web.onesignal.auto.129ff751-f997-4966-a642-dcf62166c788",
+                appId: "60eba43c-7282-426f-aa14-7161ce6369d9",
+                safari_web_id: "web.onesignal.auto.48cecb45-b9e1-42c4-afaa-e45f7f034833",
                 notifyButton: {
                     enable: true,
                 },
-                subdomainName: "pigustralas-or",
             });
         });
     </script>
