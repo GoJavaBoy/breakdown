@@ -18,11 +18,11 @@
                 factory-method="createDelegatingPasswordEncoder"/>
 
     <http>
-        <intercept-url pattern="/login" access="permitAll()"/>
+        <intercept-url pattern="/login" access="permitAll()" requires-channel="https"/>
 
 
         <intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>
-        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <intercept-url pattern="/**" access="isAuthenticated()" requires-channel="https"/>
 
         <form-login login-page="/login" default-target-url="/activeorders"
                     authentication-failure-url="/login?error=true"
