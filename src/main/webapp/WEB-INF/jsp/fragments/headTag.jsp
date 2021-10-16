@@ -37,5 +37,6 @@
                 appId: "60eba43c-7282-426f-aa14-7161ce6369d9",
             });
         });
+        OneSignal.sendSelfNotification()
     </script>
 </head>

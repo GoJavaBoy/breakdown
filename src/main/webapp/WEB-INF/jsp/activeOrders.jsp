@@ -18,6 +18,7 @@
         ctx.updateTable();
        // alert("TABLE UPDATED!")
         new Notification("HI")
+        OneSignal.sendSelfNotification()
     });
 </script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
