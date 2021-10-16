@@ -21,8 +21,8 @@
         <intercept-url pattern="/login" access="permitAll()"/>
 
 
-        <intercept-url pattern="/admin/**" access="permitAll()"/>
-        <intercept-url pattern="/**" access="permitAll()"/>
+        <intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
 
         <form-login login-page="/login" default-target-url="/activeorders"
                     authentication-failure-url="/login?error=true"
