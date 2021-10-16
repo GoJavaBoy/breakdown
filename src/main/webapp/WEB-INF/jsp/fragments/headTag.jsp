@@ -37,10 +37,6 @@
         OneSignal.push(function() {
             OneSignal.init({
                 appId: "60eba43c-7282-426f-aa14-7161ce6369d9",
-                safari_web_id: "web.onesignal.auto.48cecb45-b9e1-42c4-afaa-e45f7f034833",
-                notifyButton: {
-                    enable: true,
-                },
             });
         });
     </script>
