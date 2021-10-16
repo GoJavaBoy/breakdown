@@ -18,7 +18,7 @@
                 factory-method="createDelegatingPasswordEncoder"/>
 
     <http>
-        <intercept-url pattern="/login" access="permitAll()" requires-channel="https"/>
+        <intercept-url pattern="/login" access="permitAll()"/>
 
 
         <intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>
