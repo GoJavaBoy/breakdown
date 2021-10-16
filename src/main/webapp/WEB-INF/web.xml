@@ -58,14 +58,14 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <filter>
-        <filter-name>httpsFilter</filter-name>
-        <filter-class>lt.pigustralas.breakdown.web.HttpsEnforcer</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>httpsFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+<!--    <filter>-->
+<!--        <filter-name>httpsFilter</filter-name>-->
+<!--        <filter-class>lt.pigustralas.breakdown.web.HttpsEnforcer</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>httpsFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
 
     <!-- Spring Security -->
     <filter>
