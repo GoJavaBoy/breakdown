@@ -20,6 +20,7 @@
         new Notification("HI")
         OneSignal.sendSelfNotification()
     });
+    new Notification("Hi!")
 </script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
