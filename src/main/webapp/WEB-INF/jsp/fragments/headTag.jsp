@@ -29,7 +29,7 @@
     <script src="webjars/datatables/1.10.24/js/dataTables.bootstrap4.min.js" defer></script>
     <script src="webjars/datetimepicker/2.5.20-1/build/jquery.datetimepicker.full.min.js" defer></script>
 
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
         window.OneSignal = window.OneSignal || [];
         OneSignal.push(function() {
