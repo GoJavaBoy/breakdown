@@ -33,6 +33,9 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <script>
+        if (location.protocol !== 'https:') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
         window.OneSignal = window.OneSignal || [];
         OneSignal.push(function() {
             OneSignal.init({
