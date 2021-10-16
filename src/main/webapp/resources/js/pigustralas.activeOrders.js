@@ -139,3 +139,10 @@ function myOrder(){
     location.replace(window.location.origin + "/myorder");
 }
 
+function sendTelegramAlert(){
+    $.ajax({
+        url: "https://api.telegram.org/bot2077348239:AAFTcszT7oJZ8PKUqg_nt-zBlxY33mgbPeo/sendMessage?chat_id=@new_order_oms&text=NEW ORDER IN THE SYSTEM",
+        type: "GET"
+    }).done(function () {
+    });
+}
