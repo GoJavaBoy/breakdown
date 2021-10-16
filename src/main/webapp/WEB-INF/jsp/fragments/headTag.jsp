@@ -29,16 +29,6 @@
     <script src="webjars/datatables/1.10.24/js/dataTables.bootstrap4.min.js" defer></script>
     <script src="webjars/datetimepicker/2.5.20-1/build/jquery.datetimepicker.full.min.js" defer></script>
 
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
-                appId: "60eba43c-7282-426f-aa14-7161ce6369d9",
-            });
-        });
-        OneSignal.sendSelfNotification()
-    </script>
     <!-- PushAlert -->
     <script type="text/javascript">
         (function(d, t) {
@@ -49,4 +39,5 @@
         }(document, "script"));
     </script>
     <!-- End PushAlert -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 </head>
