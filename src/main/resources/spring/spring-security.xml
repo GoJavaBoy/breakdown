@@ -17,8 +17,8 @@
     <beans:bean class="org.springframework.security.crypto.factory.PasswordEncoderFactories" id="passwordEncoder"
                 factory-method="createDelegatingPasswordEncoder"/>
 
-    <http>
-        <intercept-url pattern="/login" access="permitAll()"/>
+    <http auto-config='true'>
+        <intercept-url pattern="/login" access="permitAll()" requires-channel="https"/>
 
 
         <intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>
