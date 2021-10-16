@@ -37,7 +37,6 @@
                     </sec:authorize>
                 </li>
             </ul>
-            <div class='onesignal-customlink-container'></div>
         </div>
     </div>
 </nav>
