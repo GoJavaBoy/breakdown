@@ -162,7 +162,7 @@ function getReadyUsers(){
         url: "admin/users/readyUsers",
         type: "GET",
     }).done(function (data) {
-        $("#readyUsers").text("Ready to drive: " + data)
+        $("#readyUsers").text("Pasiruošę vežti: " + data)
     }).fail(function () {
     });
 }

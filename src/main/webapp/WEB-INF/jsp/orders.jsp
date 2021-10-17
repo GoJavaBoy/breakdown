@@ -14,48 +14,50 @@
     });
 
     var channel = pusher.subscribe('my-channel');
-    channel.bind('refreshTable', function(data) {
+    channel.bind('refreshTable', function (data) {
         ctx.updateTable();
     });
 </script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 <div class="jumbotron pt-4">
-    <h3 class="text-center">Admin panel</h3>
+    <h3 class="text-center">Užsakymų administravimas</h3>
     <%--https://getbootstrap.com/docs/4.0/components/card/--%>
     <br/>
     <div>
         <div class="refresh"><p id="readyUsers"></p></div>
-        <div class="refresh"><button class="fas fa-sync-alt refreshBtn" onclick="getReadyUsers()"></button></div>
+        <div class="refresh">
+            <button class="fas fa-sync-alt refreshBtn" onclick="getReadyUsers()"></button>
+        </div>
     </div>
     <button class="btn btn-primary" onclick="add()">
         <span class="fa fa-plus"></span>
-        NEW
+        NAUJAS
     </button>
     <button class="btn btn-primary" onclick="activeOrders()">
         <span class="fas fa-truck-pickup"></span>
-        ACTIVE ORDERS
+        AKTYVUS UŽSAKYMAI
     </button>
     <button class="btn btn-primary" onclick="users()">
         <span class="fas fa-users"></span>
-        USERS
+        KOMANDA
     </button>
     <div class="dtable-container">
         <div class="table-responsive">
             <table class="table cards table-striped" id="datatable">
                 <thead>
                 <tr>
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
-                    <th class="text-center"><span class="fas fa-map-marked-alt">Route</span></th>
-                    <th class="text-center"><span class="fas fa-euro-sign">Price</span></th>
-                    <th class="text-center"><span class="fas fa-road">Distance</span></th>
-                    <th class="text-center"><span class="fas fa-phone-square-alt">Phone number</span></th>
-                    <th class="text-center"><span class="fas fa-clock">Created</span></th>
+                    <th class="text-center">Redaguoti</th>
+                    <th class="text-center">Pašalinti</th>
+                    <th class="text-center"><span class="fas fa-map-marked-alt">Maršrutas</span></th>
+                    <th class="text-center"><span class="fas fa-euro-sign">Kaina</span></th>
+                    <th class="text-center"><span class="fas fa-road">Atstumas</span></th>
+                    <th class="text-center"><span class="fas fa-phone-square-alt">Tel. numeris</span></th>
+                    <th class="text-center"><span class="fas fa-clock">Sudarytas</span></th>
                     <th class="text-center"><span class="fas fa-info">Info</span></th>
-                    <th class="text-center"><span class="fas fa-signal">Status</span></th>
-                    <th class="text-center"><span class="fas fa-signal">Completed by</span></th>
-                    <th class="text-center"><span class="fas fa-signal">Completed at</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Statusas</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Užsakymas baigtas</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Vairuotojas</span></th>
                 </tr>
                 </thead>
             </table>
@@ -75,23 +77,23 @@
                     <input type="hidden" id="id" name="id">
 
                     <div class="form-group">
-                        <label for="pointA" class="col-form-label">Route</label>
+                        <label for="pointA" class="col-form-label">Maršrutas</label>
                         <input type="url" class="form-control" id="pointA" name="pointA"
                                placeholder="Kauno g. 7, Vilnius">
                     </div>
 
                     <div class="form-group">
-                        <label for="price" class="col-form-label">Price</label>
+                        <label for="price" class="col-form-label">Kaina</label>
                         <input type="number" class="form-control" id="price" name="price" placeholder="100">
                     </div>
 
                     <div class="form-group">
-                        <label for="distance" class="col-form-label">Distance</label>
+                        <label for="distance" class="col-form-label">Atstumas</label>
                         <input type="number" class="form-control" id="distance" name="distance" placeholder="15">
                     </div>
 
                     <div class="form-group">
-                        <label for="phoneNumber" class="col-form-label">Phone number</label>
+                        <label for="phoneNumber" class="col-form-label">Tel. numeris</label>
                         <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
                                placeholder="37052078114">
                     </div>
@@ -103,7 +105,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="status" class="col-form-label">Status</label>
+                        <label for="status" class="col-form-label">Statusas</label>
                         <input type="text" class="form-control" id="status" name="status"
                                placeholder="ACTIVE">
                     </div>
@@ -112,11 +114,11 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeNoty()">
                     <span class="fa fa-close"></span>
-                    Cancel
+                    Uždaryti
                 </button>
                 <button type="button" class="btn btn-primary" onclick="save()">
                     <span class="fa fa-check"></span>
-                    Save
+                    Pridėti
                 </button>
             </div>
         </div>
@@ -131,12 +133,12 @@
                 <button type="button" class="close" data-dismiss="modal" onclick="closeNoty()">&times;</button>
             </div>
             <div class="modal-body">
-                    <p></p>
+                <p></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeNoty()">
                     <span class="fa fa-close"></span>
-                    Close
+                    Išsaugoti
                 </button>
             </div>
         </div>
