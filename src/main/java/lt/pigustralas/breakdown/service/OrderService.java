@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import static lt.pigustralas.breakdown.util.validation.ValidationUtil.*;
@@ -42,21 +43,22 @@ public class OrderService {
 
     public void delete(int id) {
         checkNotFoundWithId(orderRepository.delete(id), id);
-        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+//        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
     }
 
     public List<Order> getAll() {
         return orderRepository.getAll();
     }
 
+    @Transactional
     public void update(Order order) {
-        Assert.notNull(order, "meal must not be null");
+        Assert.notNull(order, "order must not be null");
         checkNotFoundWithId(orderRepository.save(order), order.id());
-        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+//        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
     }
 
     public Order create(Order order) {
-        Assert.notNull(order, "meal must not be null");
+        Assert.notNull(order, "order must not be null");
         pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
         return orderRepository.save(order);
     }
@@ -70,7 +72,7 @@ public class OrderService {
         user.setOrder(order);
         userRepository.save(user);
         orderRepository.save(order);
-        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+//        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
     }
 
     @Transactional
@@ -79,8 +81,10 @@ public class OrderService {
         Order order = get(orderId);
         assuredOrderStatusOnComplete(user, order);
         order.setStatus(OrderStatus.COMPLETED);
+        order.setCompletedBy(user.getEmail());
+        order.setCompletedData(new Date());
         user.setOrder(null);
         orderRepository.save(order);
-        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+//        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
     }
 }

@@ -35,6 +35,12 @@ public class Order extends AbstractBaseEntity{
     @JsonIgnore
     private User user;
 
+    @Column(name = "completed_by")
+    private String completedBy;
+
+    @Column(name = "completed_date")
+    private Date completedDate;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "order_status", nullable = false)
     private OrderStatus status;
@@ -128,6 +134,22 @@ public class Order extends AbstractBaseEntity{
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getCompletedBy() {
+        return completedBy;
+    }
+
+    public void setCompletedBy(String completedBy) {
+        this.completedBy = completedBy;
+    }
+
+    public Date getCompletedDate() {
+        return completedDate;
+    }
+
+    public void setCompletedData(Date completedDate) {
+        this.completedDate = completedDate;
     }
 
     @Override

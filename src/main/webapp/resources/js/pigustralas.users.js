@@ -60,9 +60,9 @@ $(function () {
                     return date;
                 }
             },
-            {
-                "data": "status"
-            },
+            // {
+            //     "data": "status"
+            // },
             {
                 "orderable": false,
                 "defaultContent": "",

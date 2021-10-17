@@ -29,7 +29,7 @@
                 <th>Role</th>
                 <th>Active</th>
                 <th>Registered</th>
-                <th>Status</th>
+<%--                <th>Status</th>--%>
                 <th></th>
                 <th></th>
             </tr>

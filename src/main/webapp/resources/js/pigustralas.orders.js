@@ -22,6 +22,9 @@ $.ajaxSetup({
                     if (this.hasOwnProperty('registered')) {
                         this.registered = this.registered.substr(0, 19).replace('T', ' ');
                     }
+                    if (this.hasOwnProperty('completedDate')) {
+                        this.completedDate = this.completedDate.substr(0, 19).replace('T', ' ');
+                    }
                 });
             }
             return json;
@@ -96,12 +99,26 @@ $(function () {
                 }
             },
             {
-                "data": "status"
-            },
-            {
                 "render": renderComment,
                 "defaultContent": "",
                 "orderable": false
+            },
+            {
+                "data": "status"
+            },
+            {
+                "data": "completedBy",
+                "defaultContent": ""
+            },
+            {
+                "data": "completedDate",
+                "defaultContent": "",
+                "render": function (date, type, row) {
+                    if (type === "display" && !(!date)) {
+                        return date.substring(0, 19);
+                    }
+                    return date;
+                }
             }
         ],
         'drawCallback': function (settings) {

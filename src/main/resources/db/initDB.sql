@@ -14,6 +14,8 @@ CREATE TABLE orders
     registered          TIMESTAMP           DEFAULT now() NOT NULL,
     phone_number        VARCHAR                           NOT NULL,
     order_status        VARCHAR                           NOT NULL,
+    completed_date      TIMESTAMP                         NULL,
+    completed_by        VARCHAR                           NULL,
     comment             VARCHAR                           NOT NULL,
     distance            INTEGER                           NOT NULL
 );

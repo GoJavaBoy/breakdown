@@ -52,8 +52,10 @@
                     <th class="text-center"><span class="fas fa-road">Distance</span></th>
                     <th class="text-center"><span class="fas fa-phone-square-alt">Phone number</span></th>
                     <th class="text-center"><span class="fas fa-clock">Created</span></th>
-                    <th class="text-center"><span class="fas fa-signal">Status</span></th>
                     <th class="text-center"><span class="fas fa-info">Info</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Status</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Completed by</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Completed at</span></th>
                 </tr>
                 </thead>
             </table>
