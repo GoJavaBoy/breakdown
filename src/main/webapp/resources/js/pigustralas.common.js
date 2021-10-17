@@ -199,7 +199,7 @@ function enable(chkbox) {
         type: "POST",
         data: "enabled=" + enabled
     }).done(function () {
-        $("label[for*='readyCheckBox']").text(enabled ? "Ready" : "Not Ready")
+        $("label[for*='readyCheckBox']").text(enabled ? "Pasiruošęs" : "Ne Pasiruošęs")
     }).fail(function () {
     });
 }
