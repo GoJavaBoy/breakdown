@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark py-0">
     <div class="container loginContainer">
-        <a href="activeorders" class="navbar-brand">OMS by PIGUSTRALAS.LT</a>
+        <a href="activeorders" class="navbar-brand">OMS</a>
         <sec:authorize access="isAuthenticated()">
             <div id="statusBox" <sec:authorize access="hasRole('ADMIN')">style="display: none"</sec:authorize> >
             </div>
