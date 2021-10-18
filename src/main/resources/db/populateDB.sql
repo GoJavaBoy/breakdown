@@ -12,8 +12,8 @@ VALUES ('USER', 100000),
        ('ADMIN', 100001),
        ('USER', 100001);
 
-INSERT INTO orders (point_a, point_b, price, phone_number, order_status, distance, comment)
-VALUES ('Vilnius, Sankriza Kauno ir Jonavos gatves', 'Kaunas, Petriuko gatve 15', 100, +37052078114, 'ACTIVE', 56, 'Some comments...'),
-       ('Vilnius, Gedimino Kalnas', 'Klaipeda, Pajurio gatve 20', 212, +37052078114, 'ACTIVE', 20, 'Some comments...'),
-       ('Utena, Vilniaus gatve 15-60', 'Vilnius, BMW Servisas', 125, +37052078114, 'PENDING', 67, 'Some comments...'),
-       ('Pabrade, Stovi ant 15 kilometro, Vilniaus kelias', 'Vilnius, Arciausias autoservisas', 80, +37052078114, 'COMPLETED', 78, 'Some comments...');
+INSERT INTO orders (point_a, price, phone_number, order_status, distance, comment)
+VALUES ('https://www.google.com/maps/d/u/0/edit?mid=11yaAGI4FhZ1P7TP9Kwf2MHJYU1FXm3Mn&usp=sharing', 100, +37052078114, 'ACTIVE', 56, 'Some comments...'),
+       ('https://www.google.com/maps/d/u/0/edit?mid=11yaAGI4FhZ1P7TP9Kwf2MHJYU1FXm3Mn&usp=sharing', 212, +37052078114, 'ACTIVE', 20, 'Some comments...'),
+       ('https://www.google.com/maps/d/u/0/edit?mid=11yaAGI4FhZ1P7TP9Kwf2MHJYU1FXm3Mn&usp=sharing', 125, +37052078114, 'PENDING', 67, 'Some comments...'),
+       ('https://www.google.com/maps/d/u/0/edit?mid=11yaAGI4FhZ1P7TP9Kwf2MHJYU1FXm3Mn&usp=sharing', 80, +37052078114, 'COMPLETED', 78, 'Some comments...');
