@@ -64,7 +64,7 @@ public class User extends AbstractNamedEntity implements HasIdAndEmail {
     private Order order;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "user_status", nullable = false)
+    @Column(name = "user_status")
     private UserStatus status;
 
     public User() {
