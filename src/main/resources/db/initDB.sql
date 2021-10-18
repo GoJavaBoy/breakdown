@@ -29,7 +29,7 @@ CREATE TABLE users
     password         VARCHAR                           NOT NULL,
     registered       TIMESTAMP           DEFAULT now() NOT NULL,
     enabled          BOOL                DEFAULT TRUE  NOT NULL,
-    user_status      VARCHAR                           NOT NULL,
+    user_status      VARCHAR                           NULL,
     FOREIGN KEY (order_id) REFERENCES orders (id)
 );
 CREATE UNIQUE INDEX users_unique_email_idx ON users (email);
