@@ -150,7 +150,7 @@ $.ajax({
         "<label class='custom-control-label' for='readyCheckBox'></label>" +
         "</div>");
 
-    $("label[for*='readyCheckBox']").text(enabled ? "Ready" : "Not Ready")
+    $("label[for*='readyCheckBox']").text(enabled ? "Pasiruošęs" : "Ne Pasiruošęs")
 }).fail(function () {
 });
 
