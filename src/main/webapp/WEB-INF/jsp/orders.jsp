@@ -56,8 +56,8 @@
                     <th class="text-center"><span class="fas fa-clock">Sudarytas</span></th>
                     <th class="text-center"><span class="fas fa-info">Info</span></th>
                     <th class="text-center"><span class="fas fa-signal">Statusas</span></th>
-                    <th class="text-center"><span class="fas fa-signal">Užsakymas baigtas</span></th>
                     <th class="text-center"><span class="fas fa-signal">Vairuotojas</span></th>
+                    <th class="text-center"><span class="fas fa-signal">Užsakymas baigtas</span></th>
                 </tr>
                 </thead>
             </table>
