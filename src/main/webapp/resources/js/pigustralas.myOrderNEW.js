@@ -71,11 +71,11 @@ function init () {
     } );
     t.row.add([
         '<a class="fas fa-map-marker-alt" href="' + result[1] + '"/>',
-        "€" + result[8],
-        result[3] + "km",
-        '<a class="fas fa-phone-volume" href="tel:' + result[4] + '"/>',
+        "€" + result[2],
+        result[7] + "km",
+        '<a class="fas fa-phone-volume" href="tel:' + result[3] + '"/>',
+        result[4],
         result[5],
-        result[6],
         "<a onclick='showComment(" + orderId + ");'><span class='fas fa-comment-dots'></span></a>"
     ]).draw(false);
 }
