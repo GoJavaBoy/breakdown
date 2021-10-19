@@ -138,7 +138,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeNoty()">
                     <span class="fa fa-close"></span>
-                    Išsaugoti
+                    Uždaryti
                 </button>
             </div>
         </div>
