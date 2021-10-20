@@ -123,7 +123,7 @@ function renderAcceptBtn(data, type, row) {
 }
 
 function acceptOrder(id) {
-    if (confirm("Patvirtinkite")) {
+    if (confirm("Confirm")) {
         $.ajax({
             url: ctx.ajaxUrl + "accept/" + id,
             type: "POST"

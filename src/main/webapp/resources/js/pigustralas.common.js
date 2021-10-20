@@ -55,7 +55,7 @@ function showComment(id) {
 }
 
 function deleteRow(id) {
-    if (confirm("Patvirtinkite")) {
+    if (confirm("Confirm")) {
         $.ajax({
             url: ctx.ajaxUrl + id,
             type: "DELETE"

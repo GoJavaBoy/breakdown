@@ -40,7 +40,7 @@ $.ajax({
 });
 
 function completeOrder() {
-    if (confirm("Patvirtinkite")) {
+    if (confirm("Confirm")) {
         $.ajax({
             type: "POST",
             url: "profile/orders/" + "complete/" + orderId,

@@ -81,7 +81,7 @@ function init () {
 }
 
 function completeOrder() {
-    if (confirm("Patvirtinkite")) {
+    if (confirm("Confrim")) {
         $.ajax({
             type: "POST",
             url: "profile/orders/complete/" + orderId,
