@@ -94,7 +94,7 @@ function closeNoty() {
 function successNoty(key) {
     closeNoty();
     new Noty({
-        text: "<span class='fa fa-lg fa-check'></span> &nbsp;" + "URA",
+        text: "<span class='fa fa-lg fa-check'></span> &nbsp;" + "Success",
         type: 'success',
         layout: "bottomRight",
         timeout: 1000
@@ -105,7 +105,7 @@ function failNoty(jqXHR) {
     closeNoty();
     var errorInfo = jqXHR.responseJSON;
     failedNote = new Noty({
-        text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;",
+        text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;" + "Fail",
         type: "error",
         layout: "bottomRight"
     });

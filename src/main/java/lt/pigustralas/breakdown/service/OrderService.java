@@ -6,6 +6,7 @@ import lt.pigustralas.breakdown.model.OrderStatus;
 import lt.pigustralas.breakdown.model.User;
 import lt.pigustralas.breakdown.repository.OrderRepository;
 import lt.pigustralas.breakdown.repository.UserRepository;
+import lt.pigustralas.breakdown.util.OrderUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
@@ -14,6 +15,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import static lt.pigustralas.breakdown.util.OrderUtil.sendTelegramNotification;
 import static lt.pigustralas.breakdown.util.validation.ValidationUtil.*;
 
 @Service
@@ -60,6 +62,7 @@ public class OrderService {
     public Order create(Order order) {
         Assert.notNull(order, "order must not be null");
         pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+        sendTelegramNotification();
         return orderRepository.save(order);
     }
 

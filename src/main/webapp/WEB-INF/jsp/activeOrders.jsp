@@ -17,7 +17,6 @@
     channel.bind('refreshTable', function (data) {
         ctx.updateTable();
        // alert("TABLE UPDATED!")
-        sendTelegramAlert()
     });
 </script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
