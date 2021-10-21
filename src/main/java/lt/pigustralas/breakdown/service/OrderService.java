@@ -45,7 +45,7 @@ public class OrderService {
 
     public void delete(int id) {
         checkNotFoundWithId(orderRepository.delete(id), id);
-//        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
     }
 
     public List<Order> getAll() {
@@ -56,7 +56,7 @@ public class OrderService {
     public void update(Order order) {
         Assert.notNull(order, "order must not be null");
         checkNotFoundWithId(orderRepository.save(order), order.id());
-//        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
     }
 
     public Order create(Order order) {
@@ -75,7 +75,7 @@ public class OrderService {
         user.setOrder(order);
         userRepository.save(user);
         orderRepository.save(order);
-//        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
     }
 
     @Transactional
@@ -88,6 +88,6 @@ public class OrderService {
         order.setCompletedData(new Date());
         user.setOrder(null);
         orderRepository.save(order);
-//        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
     }
 }
