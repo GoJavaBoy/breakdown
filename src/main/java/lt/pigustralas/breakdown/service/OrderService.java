@@ -61,9 +61,10 @@ public class OrderService {
 
     public Order create(Order order) {
         Assert.notNull(order, "order must not be null");
-        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
         sendTelegramNotification();
-        return orderRepository.save(order);
+        Order savedOrder = orderRepository.save(order);
+        pusher.trigger("my-channel", "refreshTable", Collections.singletonMap("message", "hello world"));
+        return savedOrder;
     }
 
     @Transactional
